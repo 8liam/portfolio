@@ -57,10 +57,10 @@ export default function AboutSection() {
                                 src={qut}
                                 alt="Queensland University of Technology"
                                 width="140"
-                                className="rounded-xl"
+                                className="rounded-l-xl"
                             />
                         </div>
-                        <div className='ml-4 p-2'>
+                        <div className='ml-1 p-2'>
                             <h1 className="text-xl font-bold">Queensland University of Technology</h1>
                             <p>Bachelor of Information Technology</p>
                             <ul>

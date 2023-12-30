@@ -10,7 +10,7 @@ export default function IntroSection() {
             <Image
                 src={abstract_bg}
                 alt="background"
-                className="absolute h-[100vh] w-full blur-xl opacity-30 aria-hidden"
+                className="absolute h-[100vh] w-full blur-sm select-none opacity-30 aria-hidden"
             />
             <div className="py-[40vh] z-50">
 
