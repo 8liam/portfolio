@@ -51,6 +51,7 @@ export default function PortfolioSection() {
           <div className="w-16 p-[2px] pb-1 text-center bg-primary rounded-full border-2 border-secondary">
             <Link
               href={project.website}
+              target="_blank"
               className="text-blue-500 hover:text-secondary"
               style={{ textDecoration: "none" }}
             >
@@ -59,6 +60,7 @@ export default function PortfolioSection() {
             {project.github && (
               <Link
                 href={project.github}
+                target="_blank"
                 className="text-blue-500 hover:text-secondary ml-[3px]"
                 style={{ textDecoration: "none" }}
               >
@@ -76,7 +78,7 @@ export default function PortfolioSection() {
       id="projects"
       className="xl:px-[10vw] lg:px-[2vw] justify-center text-center border-t-white border-t-[0.25px]"
     >
-      <h1 className="text-3xl font-semibold py-[5vh]">Portfolio</h1>
+      <h1 className="text-5xl font-semibold pt-[5vh] text-center">Portfolio</h1>
 
       <div className="grid 2xl:grid-cols-3 lg:grid-cols-2 py-[5vh] gap-4">
         {projects}

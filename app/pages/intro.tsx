@@ -13,11 +13,11 @@ export default function IntroSection() {
         className="absolute h-[100vh] w-full blur-sm select-none opacity-50 aria-hidden z-0"
       />
       <div className="py-[40vh] z-50">
-        <h1 className="text-secondary text-3xl font-semibold">Liam Grant</h1>
+        <h1 className="text-secondary text-5xl font-semibold">Liam Grant</h1>
         <h2 className="text-secondary text-2xl font-light">
           Aspiring Full Stack Developer
         </h2>
-        <h2 className="text-lg">
+        <h2 className="text-xl">
           <NearMeIcon fontSize="small" className="animate-pulse" /> Brisbane,
           Australia
         </h2>

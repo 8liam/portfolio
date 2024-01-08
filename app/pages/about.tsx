@@ -19,57 +19,103 @@ export default function AboutSection() {
   const languagesList = [
     {
       name: "TypeScript",
-      icon: <TypescriptOriginal size="50" />,
+      icon: (
+        <TypescriptOriginal
+          className="group-hover:scale-75 duration-300"
+          size="50"
+        />
+      ),
     },
     {
       name: "Next.js",
       icon: (
         <NextjsOriginal
-          className="invert group-hover:invert-0 duration-300"
+          className="invert group-hover:scale-75 group-hover:invert-0 duration-300"
           size="50"
         />
       ),
     },
     {
       name: "React",
-      icon: <ReactOriginal size="50" />,
+      icon: (
+        <ReactOriginal
+          className="group-hover:scale-75 duration-300"
+          size="50"
+        />
+      ),
     },
     {
       name: "React Native",
-      icon: <ReactOriginal size="50" />,
+      icon: (
+        <ReactOriginal
+          className="group-hover:scale-75 duration-300"
+          size="50"
+        />
+      ),
     },
     {
       name: "Tailwind",
-      icon: <TailwindcssPlain size="50" />,
+      icon: (
+        <TailwindcssPlain
+          className="group-hover:scale-75 duration-300"
+          size="50"
+        />
+      ),
     },
     {
       name: "JavaScript",
-      icon: <JavascriptOriginal size="50" />,
+      icon: (
+        <JavascriptOriginal
+          className="group-hover:scale-75 duration-300"
+          size="50"
+        />
+      ),
     },
     {
       name: "CSS",
-      icon: <Css3Original size="50" />,
+      icon: (
+        <Css3Original className="group-hover:scale-75 duration-300" size="50" />
+      ),
     },
     {
       name: "HTML",
-      icon: <Html5PlainWordmark size="50" />,
+      icon: (
+        <Html5PlainWordmark
+          className="group-hover:scale-75 duration-300"
+          size="50"
+        />
+      ),
     },
     {
       name: "Docker",
-      icon: <DockerOriginal size="50" />,
+      icon: (
+        <DockerOriginal
+          className="group-hover:scale-75 duration-300"
+          size="50"
+        />
+      ),
     },
     {
       name: "Git",
-      icon: <GitOriginal size="50" />,
+      icon: (
+        <GitOriginal className="group-hover:scale-75 duration-300" size="50" />
+      ),
     },
 
     {
       name: "Node",
-      icon: <NodejsPlain size="50" />,
+      icon: (
+        <NodejsPlain className="group-hover:scale-75 duration-300" size="50" />
+      ),
     },
     {
       name: "Figma",
-      icon: <FigmaOriginal size="50" />,
+      icon: (
+        <FigmaOriginal
+          className="group-hover:scale-75 duration-300"
+          size="50"
+        />
+      ),
     },
   ];
   const languages = languagesList.map((language) => (
@@ -83,28 +129,33 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="xl:px-[10vw] lg:px-[2vw] py-[2.5vh] min-h-screen   bg-gradient-to-b from-alternateprimary to-primary border-t-white border-t-[0.25px]"
+      className="xl:px-[10vw] lg:px-[2vw] py-[2.5vh] min-h-screen bg-gradient-to-b from-alternateprimary to-primary border-t-white border-t-[0.25px]"
     >
       <div>
-        <h1 className="text-3xl font-semibold text-center">About Me</h1>
-        <p>
-          I'm a software developer based in Brisbane, Australia who recently
-          graduated from QUT with a Bachelor of Information Technology. I have a
-          passionate interest in the future of web technology. I am currently
-          working on my own projects.
-        </p>
-        <a href="#projects">
-          <div className="lg:w-1/5 sm:w-2/5 mx-auto my-4 text-center p-2 border-2 border-solid border-accent bg-primary text-secondary rounded-full hover:bg-white hover:text-black hover:border-black ease-in-out duration-300">
+        <h1 className="text-5xl font-semibold text-center my-4">About Me</h1>
+        <div className="flex items-center justify-center my-4">
+          <p className="w-2/3 text-center">
+            I'm a Brisbane-based software developer, holding a Bachelor's degree
+            in Information Technology from QUT. My passion lies in the future of
+            web technology. Ready to shape the digital landscape
+            post-graduation. Let's code the future together!
+          </p>
+        </div>
+        <div className="flex items-center justify-center">
+          <a
+            href="#projects"
+            className="lg:w-1/5 sm:w-2/5 mx-auto my-2 text-center p-2 border-2 border-solid border-accent bg-primary text-secondary rounded-full hover:bg-white hover:text-black hover:border-black ease-in-out duration-300"
+          >
             Check out My Projects
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
       <div className="md:py-8 sm:py-8">
-        <h1 className="text-3xl font-semibold text-center">
-          Some Tech I Have Been Working With
+        <h1 className="text-5xl font-semibold text-center my-2">
+          Technologies{" "}
         </h1>
-        <div className="lg:flex items-center justify-center">
-          <div className="sm:max-lg:w-[100vw] grid md:grid-cols-3 gap-2 pt-2 text-center sm:w-[40vw] xl:w-[30vw] 2xl:w-[20vw]  grid-cols-2 ">
+        <div className="lg:flex items-center justify-center ">
+          <div className="sm:max-lg:w-[100vw] grid md:grid-cols-3 gap-2 pt-2 text-center sm:w-[40vw] xl:w-[30vw] 2xl:w-[25vw]  grid-cols-2 select-none my-4">
             {languages}
           </div>
         </div>
