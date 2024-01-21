@@ -1,15 +1,16 @@
 import NearMeIcon from "@mui/icons-material/NearMe";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import abstract_bg from "../../public/abstract-bg.png";
 import SouthIcon from "@mui/icons-material/South";
 import Image from "next/image";
 export default function IntroSection() {
   return (
     <section className="h-screen flex justify-center text-center">
       <Image
-        src={abstract_bg}
+        src='/abstract-bg.png'
         alt="background"
+        width={1920}
+        height={1080}
         className="absolute h-[100vh] w-full blur-sm select-none opacity-50 aria-hidden z-0"
       />
       <div className="py-[40vh] z-50">
