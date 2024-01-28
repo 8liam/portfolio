@@ -5,14 +5,7 @@ import SouthIcon from "@mui/icons-material/South";
 import Image from "next/image";
 export default function IntroSection() {
   return (
-    <section className="h-screen flex justify-center text-center">
-      <Image
-        src='/abstract-bg.png'
-        alt="background"
-        width={1920}
-        height={1080}
-        className="absolute h-[100vh] w-full blur-sm select-none opacity-50 aria-hidden z-0"
-      />
+    <section className="h-screen flex justify-center text-center animate-lavender-dream backdrop-blur">
       <div className="py-[40vh] z-50">
         <h1 className="text-secondary text-5xl font-semibold">Liam Grant</h1>
         <h2 className="text-secondary text-2xl font-light">
