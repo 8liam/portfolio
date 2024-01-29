@@ -1,15 +1,39 @@
+"use client";
 import NearMeIcon from "@mui/icons-material/NearMe";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import SouthIcon from "@mui/icons-material/South";
 import Image from "next/image";
+import React from "react";
+import { ShaderGradientCanvas, ShaderGradient } from "shadergradient";
+import * as reactSpring from "@react-spring/three";
+import * as drei from "@react-three/drei";
+import * as fiber from "@react-three/fiber";
+
 export default function IntroSection() {
   return (
     <section className="h-screen flex justify-center text-center animate-lavender-dream backdrop-blur">
+      <ShaderGradientCanvas
+        importedFiber={{ ...fiber, ...drei, ...reactSpring }}
+        style={{
+          position: "absolute",
+          top: 0,
+          pointerEvents: "none",
+          height: "100vh",
+        }}
+      >
+        <ShaderGradient
+          control="query"
+          urlString="https://www.shadergradient.co/customize?animate=on&axesHelper=on&bgColor1=%23000000&bgColor2=%23000000&brightness=0.8&cAzimuthAngle=180&cDistance=3.6&cPolarAngle=115&cameraZoom=1&color1=%235606FF&color2=%23020031&color3=%23000000&destination=onCanvas&embedMode=off&envPreset=city&format=gif&fov=45&frameRate=10&grain=on&lightType=3d&pixelDensity=1&positionX=-0.5&positionY=0.1&positionZ=0&range=disabled&rangeEnd=40&rangeStart=0&reflection=0.1&rotationX=0&rotationY=0&rotationZ=235&shader=defaults&type=waterPlane&uAmplitude=0&uDensity=1.1&uFrequency=5.5&uSpeed=0.3&uStrength=2.5&uTime=0.2&wireframe=false"
+        />
+      </ShaderGradientCanvas>
       <div className="py-[40vh] z-50">
-        <h1 className="text-secondary text-5xl font-semibold">Liam Grant</h1>
+        <h1 className="text-secondary text-5xl font-semibold animate-gradient">
+          Liam Grant
+        </h1>
         <h2 className="text-secondary text-2xl font-light">
-          Aspiring Full Stack Developer
+          Aspiring <span className="text-2xl font-bold">Full Stack</span>{" "}
+          Developer
         </h2>
         <h2 className="text-xl">
           <NearMeIcon fontSize="small" className="animate-pulse" /> Brisbane,

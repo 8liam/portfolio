@@ -15,7 +15,9 @@ const config: Config = {
         lighterbg: "#212121",
         accent: "#60A5FA",
       },
-      animation: { "lavender-dream": "lavender-dream 5s ease infinite" },
+      animation: {
+        "lavender-dream": "lavender-dream 5s ease infinite",
+      },
       keyframes: {
         "lavender-dream": {
           "0%": {
