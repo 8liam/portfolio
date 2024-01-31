@@ -12,7 +12,7 @@ import * as fiber from "@react-three/fiber";
 
 export default function IntroSection() {
   return (
-    <section className="h-screen flex justify-center text-center animate-lavender-dream backdrop-blur">
+    <section className="h-screen flex justify-center text-center backdrop-blur bg-black">
       <ShaderGradientCanvas
         importedFiber={{ ...fiber, ...drei, ...reactSpring }}
         style={{

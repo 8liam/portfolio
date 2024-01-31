@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import IntroSection from "./pages/intro";
 import AboutSection from "./pages/about";

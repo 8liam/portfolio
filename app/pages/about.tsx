@@ -1,5 +1,6 @@
 import Image from "next/image";
 import qut from "../../public/qut.jpg";
+
 import {
   GitOriginal,
   TypescriptOriginal,
@@ -14,110 +15,98 @@ import {
   FigmaOriginal,
   /* import other icons here */
 } from "devicons-react";
+export const languagesList = [
+  {
+    name: "TypeScript",
+    icon: (
+      <TypescriptOriginal
+        className="group-hover:scale-75 duration-300"
+        size="50"
+      />
+    ),
+  },
+  {
+    name: "Next",
+    icon: (
+      <NextjsOriginal
+        className="invert group-hover:scale-75 group-hover:invert-0 duration-300"
+        size="50"
+      />
+    ),
+  },
+  {
+    name: "React",
+    icon: (
+      <ReactOriginal className="group-hover:scale-75 duration-300" size="50" />
+    ),
+  },
+  {
+    name: "React Native",
+    icon: (
+      <ReactOriginal className="group-hover:scale-75 duration-300" size="50" />
+    ),
+  },
+  {
+    name: "Tailwind",
+    icon: (
+      <TailwindcssPlain
+        className="group-hover:scale-75 duration-300"
+        size="50"
+      />
+    ),
+  },
+  {
+    name: "JavaScript",
+    icon: (
+      <JavascriptOriginal
+        className="group-hover:scale-75 duration-300"
+        size="50"
+      />
+    ),
+  },
+  {
+    name: "CSS",
+    icon: (
+      <Css3Original className="group-hover:scale-75 duration-300" size="50" />
+    ),
+  },
+  {
+    name: "HTML",
+    icon: (
+      <Html5PlainWordmark
+        className="group-hover:scale-75 duration-300"
+        size="50"
+      />
+    ),
+  },
+  {
+    name: "Docker",
+    icon: (
+      <DockerOriginal className="group-hover:scale-75 duration-300" size="50" />
+    ),
+  },
+  {
+    name: "Git",
+    icon: (
+      <GitOriginal className="group-hover:scale-75 duration-300" size="50" />
+    ),
+  },
+
+  {
+    name: "Node",
+    icon: (
+      <NodejsPlain className="group-hover:scale-75 duration-300" size="50" />
+    ),
+  },
+  {
+    name: "Figma",
+    icon: (
+      <FigmaOriginal className="group-hover:scale-75 duration-300" size="50" />
+    ),
+  },
+];
 
 export default function AboutSection() {
-  const languagesList = [
-    {
-      name: "TypeScript",
-      icon: (
-        <TypescriptOriginal
-          className="group-hover:scale-75 duration-300"
-          size="50"
-        />
-      ),
-    },
-    {
-      name: "Next.js",
-      icon: (
-        <NextjsOriginal
-          className="invert group-hover:scale-75 group-hover:invert-0 duration-300"
-          size="50"
-        />
-      ),
-    },
-    {
-      name: "React",
-      icon: (
-        <ReactOriginal
-          className="group-hover:scale-75 duration-300"
-          size="50"
-        />
-      ),
-    },
-    {
-      name: "React Native",
-      icon: (
-        <ReactOriginal
-          className="group-hover:scale-75 duration-300"
-          size="50"
-        />
-      ),
-    },
-    {
-      name: "Tailwind",
-      icon: (
-        <TailwindcssPlain
-          className="group-hover:scale-75 duration-300"
-          size="50"
-        />
-      ),
-    },
-    {
-      name: "JavaScript",
-      icon: (
-        <JavascriptOriginal
-          className="group-hover:scale-75 duration-300"
-          size="50"
-        />
-      ),
-    },
-    {
-      name: "CSS",
-      icon: (
-        <Css3Original className="group-hover:scale-75 duration-300" size="50" />
-      ),
-    },
-    {
-      name: "HTML",
-      icon: (
-        <Html5PlainWordmark
-          className="group-hover:scale-75 duration-300"
-          size="50"
-        />
-      ),
-    },
-    {
-      name: "Docker",
-      icon: (
-        <DockerOriginal
-          className="group-hover:scale-75 duration-300"
-          size="50"
-        />
-      ),
-    },
-    {
-      name: "Git",
-      icon: (
-        <GitOriginal className="group-hover:scale-75 duration-300" size="50" />
-      ),
-    },
-
-    {
-      name: "Node",
-      icon: (
-        <NodejsPlain className="group-hover:scale-75 duration-300" size="50" />
-      ),
-    },
-    {
-      name: "Figma",
-      icon: (
-        <FigmaOriginal
-          className="group-hover:scale-75 duration-300"
-          size="50"
-        />
-      ),
-    },
-  ];
   const languages = languagesList.map((language) => (
     <div className="group p-2 flex flex-col items-center justify-center border-2 border-solid border-accent bg-primary text-secondary md:rounded  hover:bg-white hover:text-black hover:border-black ease-in-out duration-300">
       <div className="mb-2">{language?.icon}</div>{" "}

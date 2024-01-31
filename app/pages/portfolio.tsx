@@ -1,43 +1,52 @@
+"use client";
 import Link from "next/link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LanguageIcon from "@mui/icons-material/Language";
+import { useState, useEffect } from "react";
+export const projectsList = [
+  {
+    id: 1,
+    title: "FMLyrics",
+    imageUrl: "/projects/fmlyrics.png",
+    description:
+      "Displays the song lyrics of what you're listening to on Spotify or Soundcloud via the Last.fm API.",
+    techstack: ["React", "TypeScript", "Node"],
+    website: "https://fmlyrics.netlify.app",
+    github: "https://github.com/8liam/fmlyrics",
+  },
+  {
+    id: 2,
+    title: "liamgrant.com",
+    imageUrl: "/projects/portfolio.png",
+    description:
+      "A hub to show off my personal projects. You're using it right now!",
+    techstack: ["Next", "TypeScript", "Tailwind"],
+    website: "https://liamgrant.com",
+    github: "https://github.com/8liam/portfolio",
+  },
+];
+
 export default function PortfolioSection() {
-  const projectsList = [
-    {
-      id: 1,
-      title: "FMLyrics",
-      description:
-        "Displays the song lyrics of what you're listening to on Spotify or Soundcloud via the Last.fm API.",
-      thumbnail: "",
-      website: "https://fmlyrics.netlify.app/",
-      github: "https://github.com/8liam/FMLyrics",
-      languages: ["TypeScript", "React", "Node.js"],
-    },
-    {
-      id: 2,
-      title: "This Website",
-      description:
-        "Information about myself, my projects and contact information.",
-      thumbnail: "",
-      website: "https://liamg.zip/",
-      github: "https://github.com/8liam/portfolio",
-      languages: ["Next.js", "TypeScript", "Node.js"],
-    },
-  ];
+  const [hydrationLoad, setHydrationLoad] = useState(true);
+
+  useEffect(() => {
+    setHydrationLoad(false);
+  }, []);
   const projects = projectsList.map((project) => (
-    <div key={project.id} className="border p-4 rounded-lg bg-alternateprimary">
+    <Link
+      key={project.id}
+      href={`/project/${project.id}`}
+      className="border p-4 rounded-lg bg-alternateprimary"
+    >
       <h1 className="text-2xl font-semibold">{project.title}</h1>
       <div className="h-32">
-        <p className="text-gray-400 text-center">
-          {project.description}
-          <a></a>
-        </p>
+        <p className="text-gray-400 text-center">{project.description}</p>
       </div>
       {/*<img src={project.thumbnail} alt={`Thumbnail for ${project.title}`} className="mt-2" />
        */}
 
       <div className="p-4 ">
-        {project.languages.map((language) => (
+        {project.techstack.map((language) => (
           <div
             key={language}
             className="mx-1 bg-alternateprimary text-secondary p-2 text-sm border-2 border-accent rounded-full inline py-2 "
@@ -70,19 +79,22 @@ export default function PortfolioSection() {
           </div>
         )}
       </div>
-    </div>
+    </Link>
   ));
+  if (hydrationLoad === false) {
+    return (
+      <section
+        id="projects"
+        className="xl:px-[10vw] lg:px-[2vw] justify-center text-center border-t-white border-t-[0.25px]"
+      >
+        <h1 className="text-5xl font-semibold pt-[5vh] text-center">
+          Portfolio
+        </h1>
 
-  return (
-    <section
-      id="projects"
-      className="xl:px-[10vw] lg:px-[2vw] justify-center text-center border-t-white border-t-[0.25px]"
-    >
-      <h1 className="text-5xl font-semibold pt-[5vh] text-center">Portfolio</h1>
-
-      <div className="grid 2xl:grid-cols-3 lg:grid-cols-2 py-[5vh] gap-4">
-        {projects}
-      </div>
-    </section>
-  );
+        <div className="grid 2xl:grid-cols-3 lg:grid-cols-2 py-[5vh] gap-4">
+          {projects}
+        </div>
+      </section>
+    );
+  }
 }
