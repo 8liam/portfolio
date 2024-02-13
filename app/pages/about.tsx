@@ -108,7 +108,10 @@ export const languagesList = [
 
 export default function AboutSection() {
   const languages = languagesList.map((language) => (
-    <div className="group p-2 flex flex-col items-center justify-center border-2 border-solid border-accent bg-primary text-secondary md:rounded  hover:bg-white hover:text-black hover:border-black ease-in-out duration-300">
+    <div
+      className="group p-2 flex flex-col items-center justify-center border-2 border-solid border-accent bg-primary text-secondary md:rounded  hover:bg-white hover:text-black hover:border-black ease-in-out duration-300"
+      key={language.name}
+    >
       <div className="mb-2">{language?.icon}</div>{" "}
       {/* Added mb-2 for spacing between icon and text */}
       <div className="text-md font-medium">{language.name}</div>

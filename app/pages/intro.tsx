@@ -6,15 +6,11 @@ import SouthIcon from "@mui/icons-material/South";
 import Image from "next/image";
 import React from "react";
 import { ShaderGradientCanvas, ShaderGradient } from "shadergradient";
-import * as reactSpring from "@react-spring/three";
-import * as drei from "@react-three/drei";
-import * as fiber from "@react-three/fiber";
 
 export default function IntroSection() {
   return (
     <section className="h-screen flex justify-center text-center backdrop-blur bg-black">
       <ShaderGradientCanvas
-        importedFiber={{ ...fiber, ...drei, ...reactSpring }}
         style={{
           position: "absolute",
           top: 0,

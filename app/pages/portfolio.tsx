@@ -24,6 +24,15 @@ export const projectsList = [
     website: "https://liamgrant.com",
     github: "https://github.com/8liam/portfolio",
   },
+  {
+    id: 3,
+    title: "Customdle",
+    imageUrl: "/projects/customdle.png",
+    description: "A Wordle Clone to challenge your friends with custom words!",
+    techstack: ["Next", "TypeScript", "Tailwind"],
+    website: "https://customdle.vercel.app",
+    github: "https://github.com/8liam/custom-wordle",
+  },
 ];
 
 export default function PortfolioSection() {
@@ -36,11 +45,15 @@ export default function PortfolioSection() {
     <Link
       key={project.id}
       href={`/project/${project.id}`}
-      className="border p-4 rounded-lg bg-alternateprimary"
+      className="border p-4 rounded-lg bg-alternateprimary hover:bg-white group  duration-300 ease-in-out"
     >
-      <h1 className="text-2xl font-semibold">{project.title}</h1>
+      <h1 className="text-2xl font-semibold group-hover:text-black duration-300">
+        {project.title}
+      </h1>
       <div className="h-32">
-        <p className="text-gray-400 text-center">{project.description}</p>
+        <p className="text-gray-400 text-center group-hover:text-gray-800 duration-300">
+          {project.description}
+        </p>
       </div>
       {/*<img src={project.thumbnail} alt={`Thumbnail for ${project.title}`} className="mt-2" />
        */}
@@ -54,30 +67,6 @@ export default function PortfolioSection() {
             {language}
           </div>
         ))}
-      </div>
-      <div className="justify-start text-left">
-        {project.website && (
-          <div className="w-16 p-[2px] pb-1 text-center bg-primary rounded-full border-2 border-secondary">
-            <Link
-              href={project.website}
-              target="_blank"
-              className="text-blue-500 hover:text-secondary"
-              style={{ textDecoration: "none" }}
-            >
-              <LanguageIcon fontSize="medium" />
-            </Link>
-            {project.github && (
-              <Link
-                href={project.github}
-                target="_blank"
-                className="text-blue-500 hover:text-secondary ml-[3px]"
-                style={{ textDecoration: "none" }}
-              >
-                <GitHubIcon fontSize="medium" />
-              </Link>
-            )}
-          </div>
-        )}
       </div>
     </Link>
   ));
