@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.2",
     "@mui/material": "^5.15.2",
+    "@nauverse/react-aurora-background": "^1.0.12",
     "@next/font": "^14.1.0",
     "@react-spring/three": "^9.7.3",
     "@react-three/fiber": "^8.15.15",

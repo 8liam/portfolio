@@ -125,12 +125,12 @@ export default function AboutSection() {
     >
       <div>
         <h1 className="text-5xl font-semibold text-center my-4">About Me</h1>
-        <div className="flex items-center justify-center my-4">
-          <p className="w-2/3 text-center">
+        <div className="flex items-center justify-center my-4 mx-[10vw]">
+          <p className="w-2/3 text-center text-pretty">
             I'm a Brisbane-based software developer, holding a Bachelor's degree
             in Information Technology from QUT. My passion lies in the future of
             web technology. Ready to shape the digital landscape
-            post-graduation. Let's code the future together!
+            post-graduation.
           </p>
         </div>
         <div className="flex items-center justify-center">

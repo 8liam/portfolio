@@ -73,7 +73,12 @@ export default async function ProjectPage({ params }: any) {
               <p className="font-light text-stone-150">{project.description}</p>
 
               <h1 className="text-xl font-light text-center">Built With</h1>
-              <div className="grid grid-cols-3 ">{languageStack}</div>
+              <div
+                className="grid grid-cols-3 
+              rounded mx-20 shadow-sm"
+              >
+                {languageStack}
+              </div>
             </div>
             <div className="grid grid-cols-2 px-80 pb-8 text-white">
               <div className="p-4 ">

@@ -9,10 +9,10 @@ export const projectsList = [
     title: "FMLyrics",
     imageUrl: "/projects/fmlyrics.png",
     description:
-      "Displays the song lyrics of what you're listening to on Spotify or Soundcloud via the Last.fm API.",
-    techstack: ["React", "TypeScript", "Node"],
-    website: "https://fmlyrics.netlify.app",
-    github: "https://github.com/8liam/fmlyrics",
+      "Displays the song lyrics of what you're listening to on Spotify via the Lyrist API.",
+    techstack: ["Next", "TypeScript", "Tailwind"],
+    website: "https://fmlyrics.vercel.app",
+    github: "https://github.com/8liam/fmlyrics-v3",
   },
   {
     id: 2,
@@ -42,9 +42,9 @@ export default function PortfolioSection() {
     setHydrationLoad(false);
   }, []);
   const projects = projectsList.map((project) => (
-    <Link
+    <a
       key={project.id}
-      href={`/project/${project.id}`}
+      href={`/project/${project.title}`}
       className="border p-4 rounded-lg bg-alternateprimary hover:bg-white group  duration-300 ease-in-out"
     >
       <h1 className="text-2xl font-semibold group-hover:text-black duration-300">
@@ -57,18 +57,23 @@ export default function PortfolioSection() {
       </div>
       {/*<img src={project.thumbnail} alt={`Thumbnail for ${project.title}`} className="mt-2" />
        */}
+      <div>
+        <p className="text-secondary group-hover:text-black duration-300">
+          Built With
+        </p>
 
-      <div className="p-4 ">
-        {project.techstack.map((language) => (
-          <div
-            key={language}
-            className="mx-1 bg-alternateprimary text-secondary p-2 text-sm border-2 border-accent rounded-full inline py-2 "
-          >
-            {language}
-          </div>
-        ))}
+        <div className="p-4 ">
+          {project.techstack.map((language) => (
+            <div
+              key={language}
+              className="mx-1 text-secondary p-2 text-sm inline py-2 group-hover:text-gray-800 duration-300 "
+            >
+              {language}
+            </div>
+          ))}
+        </div>
       </div>
-    </Link>
+    </a>
   ));
   if (hydrationLoad === false) {
     return (
@@ -77,7 +82,7 @@ export default function PortfolioSection() {
         className="xl:px-[10vw] lg:px-[2vw] justify-center text-center border-t-white border-t-[0.25px]"
       >
         <h1 className="text-5xl font-semibold pt-[5vh] text-center">
-          Portfolio
+          Projects
         </h1>
 
         <div className="grid 2xl:grid-cols-3 lg:grid-cols-2 py-[5vh] gap-4">
