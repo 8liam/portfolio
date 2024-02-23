@@ -55,17 +55,17 @@ export default function FMLyrics() {
           </div>
           <div className="space-y-2">
             <h1 className="text-5xl font-semibold text-center">
-              {project.title}
+              {project?.title}
             </h1>
             <div className="justify-center flex py-2">
               <Image
-                src={project.imageUrl}
+                src={project?.imageUrl ?? "https://liamgrant.com"}
                 width={640}
                 height={360}
-                alt={project.title}
+                alt={project?.title ?? "FMLyrics"}
               />
             </div>
-            <p className="font-light text-stone-150">{project.description}</p>
+            <p className="font-light text-stone-150">{project?.description}</p>
 
             <h1 className="text-xl font-light text-center">Built With</h1>
             <div
@@ -78,7 +78,7 @@ export default function FMLyrics() {
           <div className="grid grid-cols-2 pb-8 text-white">
             <div className="p-4 ">
               <Link
-                href={project.website}
+                href={project?.website ?? "https://liamgrant.com"}
                 target="_blank"
                 className="bg-purple-400/5  p-4 rounded-xl shadow-xl ring-1 ring-black/10 backdrop-blur-3xl hover:text-black hover:bg-white/100 duration-300"
               >
@@ -90,7 +90,7 @@ export default function FMLyrics() {
             </div>
             <div className="p-4">
               <Link
-                href={project.github}
+                href={project?.github ?? "https://github.com/8liam"}
                 target="_blank"
                 className="bg-purple-400/5 p-4 rounded-xl shadow-xl ring-1 ring-black/10 backdrop-blur-3xl hover:text-black hover:bg-white/100 duration-300"
               >
