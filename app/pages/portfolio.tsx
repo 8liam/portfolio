@@ -33,6 +33,16 @@ export const projectsList = [
     website: "https://customdle.vercel.app",
     github: "https://github.com/8liam/custom-wordle",
   },
+  {
+    id: 4,
+    title: "Interactive Quiz Application",
+    imageUrl: "/projects/quiz.png",
+    description:
+      "A quiz application to test your general knowledge, or be a study tool using JSON question upload.",
+    techstack: ["React", "JavaScript", "Tailwind"],
+    website: "https://quiz-8liam.vercel.app",
+    github: "https://github.com/8liam/quiz",
+  },
 ];
 
 export default function PortfolioSection() {
@@ -44,7 +54,7 @@ export default function PortfolioSection() {
   const projects = projectsList.map((project) => (
     <a
       key={project.id}
-      href={`/project/${project.title}`}
+      href={`/project/${project.id}`}
       className="border p-4 rounded-lg bg-alternateprimary hover:bg-white group  duration-300 ease-in-out"
     >
       <h1 className="text-2xl font-semibold group-hover:text-black duration-300">
