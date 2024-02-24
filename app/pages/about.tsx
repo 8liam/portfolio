@@ -121,7 +121,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="xl:px-[10vw] lg:px-[2vw] py-[2.5vh] min-h-screen bg-gradient-to-b from-alternateprimary to-primary border-t-white border-t-[0.25px]"
+      className="xl:px-[10vw] lg:px-[2vw] py-[2.5vh] min-h-screen bg-primary border-t-white border-t-[0.25px]"
     >
       <div>
         <h1 className="text-5xl font-semibold text-center my-4">About Me</h1>
