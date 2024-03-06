@@ -18,8 +18,8 @@ export default async function ProjectPage({ params }: any) {
   );
   const projectLanguages = project
     ? languagesList.filter((language) =>
-        project.techstack.includes(language.name)
-      )
+      project.techstack.includes(language.name)
+    )
     : [];
 
   const languageStack = projectLanguages.map((language) => (
@@ -34,20 +34,10 @@ export default async function ProjectPage({ params }: any) {
     return <div>Project not found</div>;
   }
   return (
-    <AuroraBackgroundProvider
-      colors={[
-        "#000000",
-        "#2f00ff",
-        "#3f00ff",
-        "#000000",
-        "#3279cb",
-        "#141629",
-      ]}
-      animDuration={5}
-      className="max-h-[100vh] h-screen flex justify-center  bg-black"
-    >
-      <div className="xl:px-[10vw] lg:px-[2vw]  text-center z-50 w-full h-80vh ">
-        <div className="bg-alternateprimary mt-8  rounded-xl backdrop-blur-xl bg-black/0 shadow-xl ring-1 ring-black/10">
+    <div className="flex flex-col justify-center items-center min-h-screen">
+
+      <div id="project" className="xl:px-[10vw] lg:px-[2vw]  text-center z-50 w-full h-80vh ">
+        <div className="rounded-xl bg-black/50 shadow-xl ring-1 ring-white/10">
           <div className="text-left p-4">
             <p>
               <Link href="/">
@@ -105,6 +95,6 @@ export default async function ProjectPage({ params }: any) {
           </div>
         </div>
       </div>
-    </AuroraBackgroundProvider>
+    </div>
   );
 }
