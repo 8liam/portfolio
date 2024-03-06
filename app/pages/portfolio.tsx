@@ -9,7 +9,7 @@ export const projectsList = [
     title: "FMLyrics",
     imageUrl: "/projects/fmlyrics.png",
     description:
-      "Displays the song lyrics of what you're listening to on Spotify via the Lyrist API.",
+      "Displays the song lyrics of what you're listening to on Spotify via the Genius API.",
     techstack: ["Next", "TypeScript", "Tailwind"],
     website: "https://fmlyrics.vercel.app",
     github: "https://github.com/8liam/fmlyrics-v3",
@@ -42,6 +42,16 @@ export const projectsList = [
     techstack: ["React", "JavaScript", "Tailwind"],
     website: "https://quiz-8liam.vercel.app",
     github: "https://github.com/8liam/quiz",
+  },
+  {
+    id: 5,
+    title: "FlashCards",
+    imageUrl: "/projects/flashcards.png",
+    description:
+      "Reinforce your learning with digital flashcards. Study more effectively, remember more, and ace your exams.",
+    techstack: ["Next", "TypeScript", "Tailwind"],
+    website: "https://ezflashcards.vercel.app",
+    github: "https://github.com/8liam/flashcard",
   },
 ];
 
