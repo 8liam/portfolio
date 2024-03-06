@@ -29,7 +29,7 @@ export const languagesList = [
     name: "Next",
     icon: (
       <NextjsOriginal
-        className="invert group-hover:scale-75 group-hover:invert-0 duration-300"
+        className="invert group-hover:scale-75 group-hover:invert duration-300"
         size="50"
       />
     ),
@@ -109,7 +109,7 @@ export const languagesList = [
 export default function AboutSection() {
   const languages = languagesList.map((language) => (
     <div
-      className="group p-2 flex flex-col items-center justify-center border-2 border-solid border-accent bg-primary text-secondary md:rounded  hover:bg-white hover:text-black hover:border-black ease-in-out duration-300"
+      className="group p-2 flex flex-col items-center justify-center border-2 border-solid border-accent bg-primary text-secondary md:rounded hover:border-white ease-in-out duration-300"
       key={language.name}
     >
       <div className="mb-2">{language?.icon}</div>{" "}
