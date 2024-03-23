@@ -1,6 +1,5 @@
 import Image from "next/image";
-import qut from "../../public/qut.jpg";
-
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import {
   GitOriginal,
   TypescriptOriginal,
@@ -106,10 +105,14 @@ export const languagesList = [
   },
 ];
 
+const copyEmail = () => {
+  navigator.clipboard.writeText("liamgrantdev@gmail.com");
+};
+
 export default function AboutSection() {
   const languages = languagesList.map((language) => (
     <div
-      className="group p-2 flex flex-col items-center justify-center border-2 border-solid border-accent bg-primary text-secondary md:rounded hover:border-white ease-in-out duration-300"
+      className="group p-2 flex flex-col items-center justify-center border-2 border-solid border-accent bg-primary text-secondary md:rounded hover:border-white hover:rounded-xl ease-in-out duration-300"
       key={language.name}
     >
       <div className="mb-2">{language?.icon}</div>{" "}
@@ -121,25 +124,50 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="xl:px-[10vw] lg:px-[2vw] py-[2.5vh] min-h-screen bg-primary border-t-white border-t-[0.25px]"
+      className="xl:px-[20vw] lg:px-[15vw] md:px-[5vw] px-[2vw] min-h-screen  bg-primary border-t-blue-800/25 border-t-[0.25px]"
     >
-      <div>
-        <h1 className="text-5xl font-semibold text-center my-4">About Me</h1>
-        <div className="flex items-center justify-center my-4 mx-[10vw]">
-          <p className="w-2/3 text-center text-pretty">
-            I'm a Brisbane-based software developer, holding a Bachelor's degree
-            in Information Technology from QUT. My passion lies in the future of
-            web technology. Ready to shape the digital landscape
-            post-graduation.
-          </p>
+      <div className="mx-[9vw] space-y-4">
+        <h1 className="text-5xl font-semibold text-center my-2 pt-[2.5vh]">
+          About Me
+        </h1>
+        <div className="text-center">
+          <div>
+            <p className="text-gray-200 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Based in Brisbane, I'm a software engineer committed to developing
+              experiences that solve real-world problems. My passions range from
+              strategic design and planning to acquiring knowledge in the latest
+              technologies.
+            </p>
+          </div>
         </div>
         <div className="flex items-center justify-center">
           <a
             href="#projects"
-            className="lg:w-1/5 sm:w-2/5 mx-auto my-2 text-center p-2 border-2 border-solid border-accent bg-primary text-secondary rounded-full hover:bg-white hover:text-black hover:border-black ease-in-out duration-300"
+            className="lg:w-1/5 sm:w-2/5 mx-auto text-center p-2 border-2 border-solid border-accent bg-primary text-secondary rounded-3xl hover:border-white  ease-in-out duration-300 hover:rounded-xl"
           >
-            Check out My Projects
+            View Projects
           </a>
+        </div>
+
+        <div className="text-center justify-center">
+          <p className="text-gray-200 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            ...and don't be afraid to reach out to my email
+          </p>
+          <div className="flex items-center justify-center">
+            <div className="flex justify-between font-mono p-2 ">
+              <a
+                className="text-white hover:text-accent duration-300"
+                href="mailto:liamgrantdev@gmail.com?subject=Message from your Website."
+              >
+                liamgrantdev@gmail.com
+              </a>
+              <p className="ml-2">
+                <a className=" hover:text-accent duration-300 hover:cursor-pointer">
+                  <ContentCopyIcon fontSize="inherit" onClick={copyEmail} />
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="md:py-8 sm:py-8">

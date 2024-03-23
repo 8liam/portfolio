@@ -58,11 +58,11 @@ export default function IntroSection() {
           </a>
         </div>
         <div className="mt-40">
-          <a href="#about">
-            <SouthIcon
-              className="text-white animate-bounce hover:text-accent duration-300"
-              fontSize="medium"
-            />
+          <a
+            href="#about"
+            className="text-white animate-bounce hover:text-accent duration-300"
+          >
+            <SouthIcon fontSize="medium" />
           </a>
         </div>
       </div>

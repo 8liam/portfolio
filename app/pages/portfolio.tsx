@@ -65,28 +65,26 @@ export default function PortfolioSection() {
     <a
       key={project.id}
       href={`/project/${project.id}`}
-      className="border p-4 rounded-lg bg-alternateprimary hover:bg-white group  duration-300 ease-in-out"
+      className="border p-4 rounded-lg bg-alternateprimary hover:border-accent group  duration-300 ease-in-out"
     >
-      <h1 className="text-2xl font-semibold group-hover:text-black duration-300">
+      <h1 className="text-2xl font-semibold group-hover:font-bold group-hover:text-accent duration-300">
         {project.title}
       </h1>
       <div className="h-32">
-        <p className="text-gray-400 text-center group-hover:text-gray-800 duration-300">
+        <p className="text-gray-400 text-center duration-300">
           {project.description}
         </p>
       </div>
       {/*<img src={project.thumbnail} alt={`Thumbnail for ${project.title}`} className="mt-2" />
        */}
       <div>
-        <p className="text-secondary group-hover:text-black duration-300">
-          Built With
-        </p>
+        <p className="text-secondary  duration-300">Built With</p>
 
         <div className="p-4 ">
           {project.techstack.map((language) => (
             <div
               key={language}
-              className="mx-1 text-secondary p-2 text-sm inline py-2 group-hover:text-gray-800 duration-300 "
+              className="mx-1 text-secondary p-2 text-sm inline py-2  duration-300 "
             >
               {language}
             </div>
@@ -99,7 +97,7 @@ export default function PortfolioSection() {
     return (
       <section
         id="projects"
-        className="xl:px-[10vw] lg:px-[2vw] justify-center text-center border-t-white border-t-[0.25px]"
+        className="xl:px-[10vw] lg:px-[2vw] justify-center text-center border-t-blue-800/25 border-t-[0.25px]"
       >
         <h1 className="text-5xl font-semibold pt-[5vh] text-center">
           Projects
