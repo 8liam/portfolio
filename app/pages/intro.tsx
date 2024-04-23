@@ -34,11 +34,11 @@ export default function IntroSection() {
           Liam Grant
         </h1>
         <h2 className="text-secondary text-2xl font-light">
-          Aspiring <span className="text-2xl font-bold">Full Stack</span>{" "}
+          Junior <span className="text-2xl font-bold">Web</span>{" "}
           Developer
         </h2>
         <h2 className="text-xl">
-          <NearMeIcon fontSize="small" className="animate-pulse" /> Brisbane,
+          <NearMeIcon fontSize="small" className="animate-pulse" /> Gold Coast,
           Australia
         </h2>
         <div className="my-2 py-2 text-white backdrop-blur-md bg-blue-800/0 rounded-full shadow-xl ring-1 ring-black/10 w-[50%] flex justify-center items-center mx-auto">
