@@ -133,7 +133,7 @@ export default function AboutSection() {
         <div className="text-center">
           <div>
             <p className="text-gray-200 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Based in Brisbane, I'm a software engineer committed to developing
+              Based in Gold Coast, I'm a software engineer committed to developing
               experiences that solve real-world problems. My passions range from
               strategic design and planning to acquiring knowledge in the latest
               technologies.
