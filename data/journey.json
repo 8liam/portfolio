@@ -1,0 +1,43 @@
+{
+    "title": "My Journey",
+    "experiences": [
+        {
+            "id": 1,
+            "company": "PeriscoPe eCommerce",
+            "position": "Junior Web Developer",
+            "duration": "May 2024 — Present",
+            "logo": "/periscope-logo.webp",
+            "logoAlt": "PeriscoPe Logo",
+            "description": "",
+            "current": true,
+            "points": [
+                "Developed and maintained fast, scalable Shopify stores using Liquid and Shopify APIs, tailored to varied client needs.",
+                "Supported leading Australian and international retail clients by building scalable features for high-traffic Shopify stores.",
+                "Built a real-time client performance dashboard hosted on a Raspberry Pi, enabling Paid teams to quickly identify and address weak points.",
+                "Worked with the SEO team to deliver technical enhancements that lifted organic rankings and site health.",
+                "Created custom Shopify apps with Remix and Prisma to automate tasks and solve client-specific workflow issues.",
+                "Designed and deployed WordPress sites aligned with each brand's identity and business goals",
+                "Ran weekly client meetings to report progress, gather feedback, and align development work with business priorities.",
+                "Scoped and estimated hours for out-of-scope feature requests, enabling transparent client communication and project planning.",
+                "Set up accurate Google Analytics tracking and config alongside Paid Search teams to support campaign performance."
+            ]
+        },
+        {
+            "id": 2,
+            "company": "Queensland University of Technology",
+            "position": "Bachelor of Information Technology",
+            "duration": "Feb 2021 — November 2023",
+            "logo": "/qut-logo.png",
+            "logoAlt": "QUT Logo",
+            "description": "",
+            "current": false,
+            "points": [
+                "Major in Computer Science",
+                "Minor in IoT and Web Technologies",
+                "Designed and built scalable full-stack web applications with React, implementing AWS EC2 load balancing to handle high traffic.",
+                "Collaborated with a team to deliver a production-ready full-stack application for a real-world client as part of a Capstone Project.",
+                "Engineered complete enterprise systems in C, focusing on performance and reliability."
+            ]
+        }
+    ]
+}
