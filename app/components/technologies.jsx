@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import languagesData from "../../data/languages.json";
-import { ArrowRight } from "lucide-react";
 
 export default function Technologies() {
     
@@ -57,7 +56,7 @@ export default function Technologies() {
                                     alt={language.logoAlt}
                                     title={language.name}
                                     loading="lazy"
-                                    className={`w-full h-full object-contain hover:scale-105 transition-all duration-300`}
+                                    className={`w-full h-full object-contain hover:scale-105 transition-all duration-300 select-none`}
                                 />
                             </div>
                         ))}
@@ -75,7 +74,7 @@ export default function Technologies() {
                                     alt={language.logoAlt}
                                     title={language.name}
                                     loading="lazy"
-                                    className={`w-full h-full object-contain`}
+                                    className={`w-full h-full object-contain hover:scale-105 transition-all duration-300 select-none`}
                                 />
                             </div>
                         ))}

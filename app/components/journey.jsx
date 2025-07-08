@@ -43,7 +43,7 @@ export default function Journey() {
                                     width={75}
                                     height={75}
                                     alt={experience.logoAlt}
-                                    className={`rounded-sm transition-all duration-300 ${activeExperience === index
+                                    className={`rounded-sm transition-all duration-300 select-none ${activeExperience === index
                                         ? 'opacity-100 scale-105'
                                         : 'opacity-60 hover:opacity-80 hover:scale-105'
                                         }`}
