@@ -1,23 +1,19 @@
 "use client"
-import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, PerspectiveCamera, Sparkles, Lightformer, AsciiRenderer } from "@react-three/drei"
-import { Environment } from "@react-three/drei";
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls, PerspectiveCamera, AsciiRenderer } from "@react-three/drei"
 
 import { Suspense, useEffect, useRef, useState } from 'react';
-import Case from './3D/case';
+import Grid from './3D/grid';
 import CanvasLoader from './CanvasLoader';
 import { Leva, useControls } from 'leva';
-import { useMediaQuery } from 'react-responsive';
 
 function SafeAsciiRenderer({ characters, fgColor, bgColor, resolution, onReady }) {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setMounted(true);
-            if (onReady) onReady();
-        }, 1000);
-        return () => clearTimeout(timer);
+        // Original code had a 1000ms timeout here. Removed for faster loading.
+        setMounted(true);
+        if (onReady) onReady();
     }, [onReady]);
 
     if (!mounted) return null;
@@ -36,39 +32,6 @@ function SafeAsciiRenderer({ characters, fgColor, bgColor, resolution, onReady }
         if (onReady) onReady();
         return null;
     }
-}
-
-function SpinningCase(props) {
-    const ref = useRef();
-    useFrame(() => {
-        if (ref.current) {
-            ref.current.rotation.y += 0.01; // Adjust speed as desired
-        }
-    });
-    return (
-        <group ref={ref} {...props}>
-            <Case {...props} />
-        </group>
-    );
-}
-
-function RotatingCube() {
-    const meshRef = useRef();
-
-    useFrame(() => {
-        if (meshRef.current) {
-            meshRef.current.rotation.y += 0.01
-            meshRef.current.rotation.x += 0.01
-        }
-    })
-    return (
-        <mesh ref={meshRef}>
-            <cylinderGeometry args={[1, 1, 1]} />
-            <meshLambertMaterial color="#468585" emissive="#468585" />
-
-            <Sparkles count={100} scale={1} size={6} speed={0.002} noise={0.2} color="orange" />
-        </mesh>
-    )
 }
 export default function ThreeD() {
     const [isCanvasReady, setIsCanvasReady] = useState(false);
@@ -108,9 +71,6 @@ export default function ThreeD() {
         ambientIntensity: { value: 2, min: 0, max: 10, step: 0.1 },
         directionalIntensity: { value: 0.5, min: 0, max: 5, step: 0.1 },
     });
-
-    const isMobile = useMediaQuery({ maxWidth: 768 });
-    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 })
 
     useEffect(() => {
         // Delay ASCII renderer initialization to ensure canvas is ready
@@ -166,7 +126,7 @@ export default function ThreeD() {
 
                     {/* Hide original model while loading */}
                     <group visible={!isLoading}>
-                        <Case
+                        <Grid
                             scale={0.05}
                             rotation={[
                                 (8 * Math.PI) / 180,
