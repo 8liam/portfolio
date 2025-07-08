@@ -16,7 +16,9 @@
                 "PostgreSQL",
                 "Prisma ORM",
                 "Tailwind CSS"
-            ]
+            ],
+            "githubURL": "https://github.com/8liam/ourmovielist",
+            "url": "https://ourmovielist.vercel.app"
         }
     ]
 }

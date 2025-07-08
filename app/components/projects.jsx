@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import projectData from "../../data/projects.json";
+import Link from "next/link";
 
 export default function Projects() {
     const [activeProject, setActiveProject] = useState(0);
@@ -76,8 +77,20 @@ export default function Projects() {
                             </div>
                             <div className="border-[#1C1C21] border-t border-r" >
                                 <div className="grid lg:grid-cols-2 grid-cols-1 max-h-[1020px]">
-                                    <div className="p-4 border-[#1C1C21] border-r overflow-auto order-2 lg:order-1">
-                                        <p>{currentProject.description}</p>
+                                    <div className="border-[#1C1C21] border-r overflow-auto order-2 lg:order-1 flex flex-col">
+                                        <p className="p-4 flex-1">{currentProject.description}</p>
+                                        <div className="grid grid-cols-2 border-[#1C1C21] border-t text-center mt-auto">
+                                            <Link href={currentProject.url} target="_blank">
+                                                <div className="p-4 border-[#1C1C21] border-r">
+                                                    Live Site
+                                                </div>
+                                            </Link>
+                                            <Link href={currentProject.githubURL} target="_blank">
+                                                <div className="p-4 ">
+                                                    View on Github
+                                                </div>
+                                            </Link>
+                                        </div>
                                     </div>
                                     <div className="p-4 select-none order-1 lg:order-2">
                                         <Image

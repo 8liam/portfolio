@@ -11,7 +11,7 @@ export default function Home() {
     <>
 
       <div className="grid grid-cols-2 w-screen px-4 pt-2  fixed z-10 ">
-        <div className="gap-2 flex font-medium">
+        <div className="gap-2 flex font-medium text-sm lg:text-md">
           <span className="hover:tracking-wider duration-300">LIAM</span>
           <span className="pointer-events-none">/</span>
           <Link className="hover:tracking-wider duration-300" href={"#about"}>ABOUT</Link>
@@ -20,7 +20,7 @@ export default function Home() {
           <span className="pointer-events-none">/</span>
           <Link className="hover:tracking-wider duration-300" href={"#projects"}>PROJECTS</Link>
         </div>
-        <div className="text-right">
+        <div className="text-right text-sm lg:text-md">
           <Link className="hover:tracking-wider duration-300" href={"#contact"}>CONTACT</Link>
         </div>
       </div>
