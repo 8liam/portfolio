@@ -92,7 +92,7 @@ export default function ThreeD() {
 
     return (
         <div className="w-screen h-screen relative">
-            <Leva />
+            {/* <Leva /> */}
 
             {/* Loading Overlay */}
             {isLoading && (

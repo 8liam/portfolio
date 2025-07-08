@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Hero from "./components/hero";
 import ThreeD from "./components/3d";
 import Skills from "./components/skills";
 import Journey from "./components/journey";
