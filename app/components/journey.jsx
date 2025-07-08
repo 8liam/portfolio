@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import journeyData from "../../data/journey.json";
 
-export default function Journey(projects) {
+export default function Journey() {
     const [activeExperience, setActiveExperience] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const currentExperience = journeyData.experiences[activeExperience];
@@ -22,13 +22,13 @@ export default function Journey(projects) {
     };
 
     return (
-        <section className="border-black border-t">
+        <section className="border-[#1C1C21] border-t ">
             <h2 className="p-4 text-3xl font-bold border-b">{journeyData.title}</h2>
 
-            <div className="bg-white border-b border-[#1C1C21] min-h-[400px]">
+            <div className="bg-white  border-[#1C1C21] min-h-[400px]">
                 <div className="flex h-full">
                     {/* Navigation Sidebar */}
-                    <div className="border-r border-black">
+                    <div className="border-r border-[#1C1C21]">
                         {journeyData.experiences.map((experience, index) => (
                             <div
                                 key={experience.id}

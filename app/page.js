@@ -4,6 +4,7 @@ import ThreeD from "./components/3d";
 import Skills from "./components/skills";
 import Journey from "./components/journey";
 import Footer from "./components/footer";
+import Technologies from "./components/technologies";
 
 export default function Home() {
   return (
@@ -30,7 +31,8 @@ export default function Home() {
       </div>
       <ThreeD />
       <Skills />
-      <Journey />
+      <Technologies />
+      {/* <Journey /> */}
       <Footer />
     </>
 

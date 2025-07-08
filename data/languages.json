@@ -1,0 +1,71 @@
+{
+    "title": "Technologies",
+    "languages": [
+        {
+            "id": 1,
+            "name": "Next.js",
+            "logo": "/languages/nextjs-logo.png",
+            "logoAlt": "Next.js Logo"
+        },
+        {
+            "id": 2,
+            "name": "React",
+            "logo": "/languages/react-logo.png",
+            "logoAlt": "React Logo"
+        },
+        {
+            "id": 3,
+            "name": "JavaScript",
+            "logo": "/languages/javascript-logo.png",
+            "logoAlt": "JavaScript Logo"
+        },
+        {
+            "id": 4,
+            "name": "TypeScript",
+            "logo": "/languages/typescript-logo.png",
+            "logoAlt": "TypeScript Logo"
+        },
+        {
+            "id": 5,
+            "name": "Vercel",
+            "logo": "/languages/vercel-logo.png",
+            "logoAlt": "Vercel Logo"
+        },
+        {
+            "id": 6,
+            "name": "Tailwind CSS",
+            "logo": "/languages/tailwind-logo.png",
+            "logoAlt": "Tailwind CSS Logo"
+        },
+        {
+            "id": 7,
+            "name": "Shopify",
+            "logo": "/languages/shopify-logo.png",
+            "logoAlt": "Shopify Logo"
+        },
+        {
+            "id": 8,
+            "name": "Supabase",
+            "logo": "/languages/supabase-logo.png",
+            "logoAlt": "Supabase Logo"
+        },
+        {
+            "id": 9,
+            "name": "Node.js",
+            "logo": "/languages/nodejs-logo.png",
+            "logoAlt": "Node.js Logo"
+        },
+        {
+            "id": 10,
+            "name": "PostgreSQL",
+            "logo": "/languages/postgresql-logo.png",
+            "logoAlt": "PostgreSQL Logo"
+        },
+        {
+            "id": 11,
+            "name": "Prisma ORM",
+            "logo": "/languages/prisma-logo.png",
+            "logoAlt": "Prisma ORM Logo"
+        }
+    ]
+}
