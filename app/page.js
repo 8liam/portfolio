@@ -3,6 +3,8 @@ import Skills from "./components/skills";
 import Journey from "./components/journey";
 import Footer from "./components/footer";
 import Technologies from "./components/technologies";
+import Link from "next/link";
+import Projects from "./components/projects";
 
 export default function Home() {
   return (
@@ -12,12 +14,14 @@ export default function Home() {
         <div className="gap-2 flex font-medium">
           <span className="hover:tracking-wider duration-300">LIAM</span>
           <span className="pointer-events-none">/</span>
-          <span className="hover:tracking-wider duration-300">ABOUT</span>
+          <Link className="hover:tracking-wider duration-300" href={"#about"}>ABOUT</Link>
           <span className="pointer-events-none">/</span>
-          <span className="hover:tracking-wider duration-300">JOURNEY</span>
+          <Link className="hover:tracking-wider duration-300" href={"#journey"}>JOURNEY</Link>
+          <span className="pointer-events-none">/</span>
+          <Link className="hover:tracking-wider duration-300" href={"#projects"}>PROJECTS</Link>
         </div>
         <div className="text-right">
-          <span className="hover:tracking-wider duration-300">CONTACT</span>
+          <Link className="hover:tracking-wider duration-300" href={"#contact"}>CONTACT</Link>
         </div>
       </div>
 
@@ -30,7 +34,8 @@ export default function Home() {
       <ThreeD />
       <Skills />
       <Technologies />
-      {/* <Journey /> */}
+      <Journey />
+      <Projects />
       <Footer />
     </>
 

@@ -1,0 +1,22 @@
+{
+    "title": "My Projects",
+    "projects": [
+        {
+            "id": 1,
+            "name": "OurMovieList",
+            "logo": "/projects/ourmovielist-icon.png",
+            "logoAlt": "OurMovieList Logo",
+            "tagline": "Collaborative Movie Discovery & Watchlists",
+            "description": "OurMovieList is a dynamic and interactive web application designed to enhance how friends and groups discover, manage, and share their favorite movies. This platform offers a seamless experience for tracking trending films, creating and managing private groups, and building shared watchlists, fostering a collaborative movie-watching journey.",
+            "image": "/projects/ourmovielist.webp",
+            "imageAlt": "OurMovieList Home Page",
+            "languages": [
+                "Next.js",
+                "Supabase",
+                "PostgreSQL",
+                "Prisma ORM",
+                "Tailwind CSS"
+            ]
+        }
+    ]
+}

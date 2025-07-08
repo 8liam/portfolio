@@ -22,7 +22,7 @@ export default function Journey() {
     };
 
     return (
-        <section className="border-[#1C1C21] border-t ">
+        <section className="border-[#1C1C21] border-b" id="journey">
             <h2 className="p-4 text-3xl font-bold border-b">{journeyData.title}</h2>
 
             <div className="bg-white  border-[#1C1C21] min-h-[400px]">

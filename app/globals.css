@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -23,23 +24,24 @@ body {
 }
 
 @keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-scroll {
-    animation: scroll var(--scroll-speed) linear infinite;
+  animation: scroll var(--scroll-speed) linear infinite;
 }
 
 .scroller-inner {
-    width: max-content;
+  width: max-content;
 }
 
 .scroller-inner.paused {
-    animation-play-state: paused;
-    animation-delay: 0s;
+  animation-play-state: paused;
+  animation-delay: 0s;
 }
