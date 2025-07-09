@@ -43,8 +43,8 @@
                 "Retrieves up-to-date info from RSS Feed of OzBargain platform.",
                 "Data parsed from RSS feed to display on details page."
             ],
-            "githubURL": "https://github.com/8liam/ourmovielist",
-            "url": "https://ourmovielist.vercel.app"
+            "githubURL": null,
+            "url": null
         }
     ]
 }
