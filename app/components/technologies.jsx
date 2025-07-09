@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import languagesData from "../../data/languages.json";
 
 export default function Technologies() {
@@ -15,7 +15,7 @@ export default function Technologies() {
         if (scrollerRef.current) {
             timeoutRef.current = setTimeout(() => {
                 scrollerRef.current.classList.add('paused');
-            }, 150); // 300ms delay
+            }, 150); // 150ms delay
         }
     };
 

@@ -43,7 +43,7 @@ export default function Skills(projects) {
 
 
                 <div className=" bg-white border-r border-b border-[#1C1C21]  p-4 space-y-1 ">
-                    <Image src={"/learning.png"} width={1000} height={500} alt="Australia map" className="w-full object-contain select-none" />
+                    <Image src={"/learning.png"} width={1000} height={500} alt="Learning image" className="w-full object-contain select-none" />
                     <h4 className="font-sans font-semibold text-lg">Continuous Learning</h4>
                     <p className="font-sans">I'm always exploring new technologies and methodologies to enhance my development workflow.</p>
                 </div>

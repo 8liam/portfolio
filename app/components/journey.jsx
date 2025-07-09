@@ -67,16 +67,17 @@ export default function Journey() {
 
                             {currentExperience.points && currentExperience.points.length > 0 && (
                                 <div className="flex-1">
-                                    <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+                                    <div className="space-y-1 px-4 ">
                                         {currentExperience.points.map((point, index) => (
-                                            <li key={index} className={`transition-all duration-300 ease-in-out ${isTransitioning
+                                            <p key={index} className={`before:content-['-'] before:inline-block before:w-[1em] before:-ml-[1em] before:text-gray-500 before:mr-1 transition-all duration-300 ease-in-out ${isTransitioning
                                                 ? 'opacity-0 transform translate-x-4'
                                                 : 'opacity-100 transform translate-x-0'
                                                 }`} style={{ transitionDelay: `${index * 50}ms` }}>
                                                 {point}
-                                            </li>
+                                            </p>
                                         ))}
-                                    </ul>
+                                        
+                                    </div>
                                 </div>
                             )}
                         </div>

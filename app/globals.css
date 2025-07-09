@@ -43,5 +43,4 @@ body {
 
 .scroller-inner.paused {
   animation-play-state: paused;
-  animation-delay: 0s;
 }

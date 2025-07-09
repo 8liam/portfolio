@@ -46,9 +46,9 @@ export default function ThreeD() {
         asciiBgColor: { value: "white" },
 
         // Camera
-        cameraX: { value: 0, min: -200, max: 200 },
-        cameraY: { value: -50, min: -200, max: 200 },
-        cameraZ: { value: 0, min: -200, max: 200 },
+        cameraPositionX: { value: -48, min: -200, max: 200, step: 1 },
+        cameraPositionY: { value: 14, min: -200, max: 200, step: 1 },
+        cameraPositionZ: { value: 20, min: -200, max: 200, step: 1 },
 
         // Case
         caseScale: { value: 0.1, min: 0.01, max: 5, step: 0.01 },
@@ -58,6 +58,14 @@ export default function ThreeD() {
         caseRotationX: { value: 0, min: 0, max: 360, step: 1 },
         caseRotationY: { value: 0, min: 0, max: 360, step: 1 },
         caseRotationZ: { value: 200, min: 0, max: 360, step: 1 },
+
+        // Grid
+        gridRotationX: { value: 8, min: 0, max: 360, step: 1 },
+        gridRotationY: { value: 0, min: 0, max: 360, step: 1 },
+        gridRotationZ: { value: 64, min: 0, max: 360, step: 1 },
+        gridPositionX: { value: 18, min: -200, max: 200, step: 1 },
+        gridPositionY: { value: -11, min: -200, max: 200, step: 1 },
+        gridPositionZ: { value: 3, min: -200, max: 200, step: 1 },
 
         // Orbit Controls
         enableAutoRotate: { value: true },
@@ -92,7 +100,7 @@ export default function ThreeD() {
 
     return (
         <div className="w-screen h-screen relative">
-            {/* <Leva /> */}
+            {process.env.NODE_ENV === 'development' && <Leva />}
 
             {/* Loading Overlay */}
             {isLoading && (
@@ -110,7 +118,7 @@ export default function ThreeD() {
                     {isCanvasReady && (
                         <SafeAsciiRenderer
                             characters={controls.asciiCharacters}
-                            fgColor="#838383"
+                            fgColor={controls.asciiFgColor}
                             bgColor={controls.asciiBgColor}
                             resolution={Math.max(0.05, Math.min(1, controls.asciiResolution))}
                             onReady={() => setIsAsciiReady(true)}
@@ -121,7 +129,7 @@ export default function ThreeD() {
 
                     <PerspectiveCamera
                         makeDefault
-                        position={[-48, 14, 20]}
+                        position={[controls.cameraPositionX, controls.cameraPositionY, controls.cameraPositionZ]}
                     />
 
                     {/* Hide original model while loading */}
@@ -129,11 +137,11 @@ export default function ThreeD() {
                         <Grid
                             scale={0.05}
                             rotation={[
-                                (8 * Math.PI) / 180,
-                                (0 * Math.PI) / 180,
-                                (64 * Math.PI) / 180
+                                (controls.gridRotationX * Math.PI) / 180,
+                                (controls.gridRotationY * Math.PI) / 180,
+                                (controls.gridRotationZ * Math.PI) / 180
                             ]}
-                            position={[13, 0, -12]}
+                            position={[controls.gridPositionX, controls.gridPositionY, controls.gridPositionZ]}
                         />
                     </group>
                     <OrbitControls

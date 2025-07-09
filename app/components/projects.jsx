@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import projectData from "../../data/projects.json";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Projects() {
     const [activeProject, setActiveProject] = useState(0);
@@ -78,18 +79,36 @@ export default function Projects() {
                             <div className="border-[#1C1C21] border-t border-r" >
                                 <div className="grid lg:grid-cols-2 grid-cols-1 max-h-[1020px]">
                                     <div className="border-[#1C1C21] border-r overflow-auto order-2 lg:order-1 flex flex-col">
-                                        <p className="p-4 flex-1">{currentProject.description}</p>
+                                        <div className="p-4 flex-1">
+                                            <p>{currentProject.description}</p>
+                                            
+                                            {currentProject.features && currentProject.features.length > 0 && (
+                                                <div className="space-y-1 mt-4">
+                                                    <p className="text-lg">Features</p>
+                                                    <div className="space-y-1 px-4 grid-cols-1 lg:grid-cols-2 grid gap-x-2">
+                                                        {currentProject.features.map((feature, index) => (
+                                                        <p key={index} className="before:content-['-'] before:inline-block before:w-[1em] before:-ml-[1em] before:text-gray-500 before:mr-1">{feature}</p>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </div>
+                                        
                                         <div className="grid grid-cols-2 border-[#1C1C21] border-t text-center mt-auto">
-                                            <Link href={currentProject.url} target="_blank">
-                                                <div className="p-4 border-[#1C1C21] border-r">
-                                                    Live Site
-                                                </div>
-                                            </Link>
-                                            <Link href={currentProject.githubURL} target="_blank">
-                                                <div className="p-4 ">
-                                                    View on Github
-                                                </div>
-                                            </Link>
+                                            {currentProject.url && (
+                                                <Link href={currentProject.url} target="_blank">
+                                                    <div className="p-4 border-[#1C1C21] border-r flex flex-row gap-2 justify-center items-center">
+                                                        Live Site <ArrowUpRight width={20} height={20}/>
+                                                    </div>
+                                                </Link>
+                                            )}
+                                            {currentProject.githubURL && (
+                                                <Link href={currentProject.githubURL} target="_blank">
+                                                    <div className="p-4 flex flex-row gap-2 justify-center items-center">
+                                                        View on Github <ArrowUpRight width={20} height={20}/>
+                                                    </div>
+                                                </Link>
+                                            )}
                                         </div>
                                     </div>
                                     <div className="p-4 select-none order-1 lg:order-2">
