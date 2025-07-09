@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# liamgrant.com
 
-## Getting Started
+![Hero Section](https://i.imgur.com/TNJrGQz.png)
 
-First, run the development server:
+## 💻 Technical Stack
+- 3D Models & Animations: `three.js`
+- Frontend: `Tailwind CSS`, `Next.js`
+- Design: `Figma`
+## 🎨 Design Thesis
+I'm tired of every development portfolio being a dark-mode website (I am guilty of this), so I wanted to somehow incorporate a modern / experimental design into my new portfolio, but have it in light mode (and use as much white as possible). 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+I began studying grid layouts in design and wanted to only use rounded corners with images, and lock everything else off within a grid with 1px borders.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+But with this - there was too little going on when the user first entered the site - i was greeting users with a white background, which made me consider challenge myself to implement 3D graphics into the hero section on the website. I spent some time looking for 3D models that fit my vision to begin with until I found `<AsciiRenderer>` in `react-three-fiber/drei`.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+This ascii look was perfect for what i was looking for, and I found this model of a grid-like fence with a chrome texture. I thought this would be perfect and would make an interesting display to the user.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+<div style="width: 100%; display: flex; text-align: center; justify-content: center; justify-items: center;">
+<div style="width: 50%">
 
-To learn more about Next.js, take a look at the following resources:
+![Initial State of 3D Model](https://i.imgur.com/HQiKDX9.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+</div>
+</div>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+Now I had finalised on the 3D Model I would use, i incorporated this into my hero section. 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<div style="width: 100%; display: flex; text-align: center; justify-content: center; justify-items: center;">
+<div style="width: 50%">
+
+![Finished State of Hero Section with 3D Model](https://i.imgur.com/TNJrGQz.png)
+
+</div>
+</div>
+
