@@ -94,10 +94,10 @@ export default function Projects() {
                                             )}
                                         </div>
                                         
-                                        <div className="grid grid-cols-2 border-[#1C1C21] border-t text-center mt-auto">
+                                        <div className="grid grid-cols-1 lg:grid-cols-2 border-[#1C1C21] border-t text-center mt-auto">
                                             {currentProject.url && (
                                                 <Link href={currentProject.url} target="_blank">
-                                                    <div className="p-4 border-[#1C1C21] border-r flex flex-row gap-2 justify-center items-center">
+                                                    <div className="p-4 border-[#1C1C21] border-r border-b lg:border-b-0 flex flex-row gap-2 justify-center items-center">
                                                         Live Site <ArrowUpRight width={20} height={20}/>
                                                     </div>
                                                 </Link>
