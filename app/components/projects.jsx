@@ -81,31 +81,31 @@ export default function Projects() {
                                     <div className="border-[#1C1C21] border-r overflow-auto order-2 lg:order-1 flex flex-col">
                                         <div className="p-4 flex-1">
                                             <p>{currentProject.description}</p>
-                                            
+
                                             {currentProject.features && currentProject.features.length > 0 && (
                                                 <div className="space-y-1 mt-4">
                                                     <p className="text-lg">Features</p>
                                                     <div className="space-y-1 px-4 grid-cols-1 lg:grid-cols-2 grid gap-x-2">
                                                         {currentProject.features.map((feature, index) => (
-                                                        <p key={index} className="before:content-['-'] before:inline-block before:w-[1em] before:-ml-[1em] before:text-gray-500 before:mr-1">{feature}</p>
+                                                            <p key={index} className="before:content-['-'] before:inline-block before:w-[1em] before:-ml-[1em] before:text-gray-500 before:mr-1">{feature}</p>
                                                         ))}
                                                     </div>
                                                 </div>
                                             )}
                                         </div>
-                                        
-                                        <div className="grid grid-cols-1 lg:grid-cols-2 border-[#1C1C21] border-t text-center mt-auto">
+
+                                        <div className="grid grid-cols-1 lg:grid-cols-2 border-[#1C1C21]  text-center mt-auto">
                                             {currentProject.url && (
                                                 <Link href={currentProject.url} target="_blank">
-                                                    <div className="p-4 border-[#1C1C21] border-r border-b lg:border-b-0 flex flex-row gap-2 justify-center items-center">
-                                                        Live Site <ArrowUpRight width={20} height={20}/>
+                                                    <div className="p-4 border-[#1C1C21] border-t border-r border-b lg:border-b-0 flex flex-row gap-2 justify-center items-center">
+                                                        Live Site <ArrowUpRight width={20} height={20} />
                                                     </div>
                                                 </Link>
                                             )}
                                             {currentProject.githubURL && (
                                                 <Link href={currentProject.githubURL} target="_blank">
-                                                    <div className="p-4 flex flex-row gap-2 justify-center items-center">
-                                                        View on Github <ArrowUpRight width={20} height={20}/>
+                                                    <div className="p-4 border-[#1C1C21] border-t  flex flex-row gap-2 justify-center items-center">
+                                                        View on Github <ArrowUpRight width={20} height={20} />
                                                     </div>
                                                 </Link>
                                             )}

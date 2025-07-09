@@ -54,10 +54,10 @@ export default function Skills(projects) {
                 </div>
 
                 <div className=" bg-white  border-[#1C1C21]  p-4 lg:col-span-2 space-y-1">
-
+                    <Image src={"/knowledge-in-best-practices.png"} width={2000} height={500} alt="Australia Map" className="w-full object-contain select-none" />
                     <h4 className="font-sans font-semibold text-lg">Knowledge in Best Practices</h4>
                     <p className="font-sans">
-                        I follow industry best practices such as writing clean, maintainable, and well-documented code, leveraging version control with Git, and prioritizing performance, accessibility, SEO and security. I believe in code reviews and continuous improvement to ensure high-quality, reliable software.
+                        I follow industry best practices by writing clean, maintainable, and well-documented code. I use Git for version control and prioritize performance, accessibility, SEO, and security to deliver high-quality, reliable software.
                     </p>
                 </div>
             </div>
