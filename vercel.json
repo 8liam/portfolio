@@ -4,7 +4,23 @@
       {
         "source": "/project/(.*)",
         "destination": "/",
-        "permanent": true
+        "statusCode": 301
+      },
+      {
+        "source": "/(.*)",
+        "destination": "/",
+        "statusCode": 301
       }
-    ]
+    ],
+    "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
   }
