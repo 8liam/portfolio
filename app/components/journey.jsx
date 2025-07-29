@@ -76,7 +76,7 @@ export default function Journey() {
                                                 {point}
                                             </p>
                                         ))}
-                                        
+
                                     </div>
                                 </div>
                             )}

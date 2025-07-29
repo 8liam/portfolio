@@ -61,12 +61,12 @@ export default function Projects() {
                             : 'opacity-100 transform translate-y-0'
                             }`}>
                             <div className="grid lg:grid-cols-3 grid-cols-1">
-                                <div className="p-4 border-[#1C1C21] border-r border-b lg:border-b-0">
+                                <div className="p-4 border-[#1C1C21] lg:border-r border-b lg:border-b-0">
                                     <h4 className="font-sans font-semibold text-lg">{currentProject.name}</h4>
                                     <p className="text-lg">{currentProject.tagline}</p>
                                 </div>
 
-                                <div className="p-4 border-[#1C1C21] border-r lg:col-span-2">
+                                <div className="p-4 border-[#1C1C21] lg:border-r lg:col-span-2">
                                     {currentProject.languages.map((language, index) => (
 
                                         <span key={index} className="font-mono uppercase ">{language}{index !== currentProject.languages.length - 1 ? " / " : ""}</span>
@@ -76,9 +76,9 @@ export default function Projects() {
 
                                 </div>
                             </div>
-                            <div className="border-[#1C1C21] border-t border-r" >
+                            <div className="border-[#1C1C21] border-t lg:border-r" >
                                 <div className="grid lg:grid-cols-2 grid-cols-1 max-h-[1020px]">
-                                    <div className="border-[#1C1C21] border-r overflow-auto order-2 lg:order-1 flex flex-col">
+                                    <div className="border-[#1C1C21] lg:border-r overflow-auto order-2 lg:order-1 flex flex-col">
                                         <div className="p-4 flex-1">
                                             <p>{currentProject.description}</p>
 
@@ -97,7 +97,7 @@ export default function Projects() {
                                         <div className="grid grid-cols-1 lg:grid-cols-2 border-[#1C1C21]  text-center mt-auto">
                                             {currentProject.url && (
                                                 <Link href={currentProject.url} target="_blank">
-                                                    <div className="p-4 border-[#1C1C21] border-t border-r  lg:border-b-0 flex flex-row gap-2 justify-center items-center">
+                                                    <div className="p-4 border-[#1C1C21] border-t lg:border-r  lg:border-b-0 flex flex-row gap-2 justify-center items-center">
                                                         Live Site <ArrowUpRight width={20} height={20} />
                                                     </div>
                                                 </Link>

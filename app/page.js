@@ -1,3 +1,4 @@
+"use client"
 import ThreeD from "./components/3d";
 import Skills from "./components/skills";
 import Journey from "./components/journey";
@@ -6,12 +7,26 @@ import Technologies from "./components/technologies";
 import Link from "next/link";
 import Projects from "./components/projects";
 import { ArrowDown } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      setScrolled(scrollPosition > viewportHeight);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
 
-      <div className="grid grid-cols-2 w-screen px-4 pt-2  fixed z-10 ">
+      <div className={`z-50 grid grid-cols-2 w-screen px-4 py-2 fixed transition-all duration-0 ${scrolled ? 'bg-white/50 backdrop-blur-md border-b' : ''}`}>
         <div className="gap-2 flex font-medium text-sm lg:text-md">
           <span className="hover:tracking-wider duration-300">LIAM</span>
           <span className="pointer-events-none">/</span>
