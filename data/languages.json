@@ -66,6 +66,12 @@
             "name": "Prisma ORM",
             "logo": "/languages/prisma-logo.png",
             "logoAlt": "Prisma ORM Logo"
+        },
+        {
+            "id": 12,
+            "name": "Figma",
+            "logo": "/languages/figma-logo.png",
+            "logoAlt": "Figma Logo"
         }
     ]
 }
