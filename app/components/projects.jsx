@@ -25,7 +25,7 @@ export default function Projects() {
 
     return (
         <section className="border-[#1C1C21] border-b" id="projects">
-            <h2 className="p-4 text-3xl font-bold border-b">{projectData.title}</h2>
+            <h2 className="p-4 text-3xl font-bold border-b uppercase">{projectData.title}</h2>
 
             <div className="bg-white  border-[#1C1C21] min-h-[400px]">
                 <div className="flex h-full">

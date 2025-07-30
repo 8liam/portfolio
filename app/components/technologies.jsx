@@ -30,7 +30,7 @@ export default function Technologies() {
     return (
         <section className="border-[#1C1C21] border-t">
             <div className="border-b border-[#1C1C21]">
-                <h2 className="p-4 text-3xl font-bold flex items-center gap-2 border-[#1C1C21]">
+                <h2 className="p-4 text-3xl font-bold flex items-center gap-2 border-[#1C1C21] uppercase">
                     {languagesData.title}
                 </h2>
             </div>
