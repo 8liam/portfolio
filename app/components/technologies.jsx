@@ -66,7 +66,7 @@ export default function Technologies() {
                                     alt={language.logoAlt}
                                     title={language.name}
                                     loading="lazy"
-                                    className="w-full h-full object-contain hover:scale-105 transition-all duration-300 select-none"
+                                    className="w-full h-full object-contain hover:scale-105 transition-all duration-300 select-none grayscale-0 hover:grayscale-100"
                                 />
                             </li>
                         ))}

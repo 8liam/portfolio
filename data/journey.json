@@ -3,7 +3,7 @@
     "experiences": [
         {
             "id": 1,
-            "company": "PeriscoPe eCommerce",
+            "company": "PeriscoPe",
             "position": "Junior Web Developer",
             "duration": "May 2024 — Present",
             "logo": "/periscope-logo.webp",
@@ -11,22 +11,16 @@
             "description": "",
             "current": true,
             "points": [
-                "Developed and maintained fast, scalable Shopify stores using Liquid and Shopify APIs, tailored to varied client needs.",
-                "Supported leading Australian and international retail clients by building scalable features for high-traffic Shopify stores.",
-                "Built a real-time client performance dashboard hosted on a Raspberry Pi, enabling Paid teams to quickly identify and address weak points.",
-                "Worked with the SEO team to deliver technical enhancements that lifted organic rankings and site health.",
-                "Created custom Shopify apps with Remix and Prisma to automate tasks and solve client-specific workflow issues.",
-                "Designed and deployed WordPress sites aligned with each brand's identity and business goals",
-                "Ran weekly client meetings to report progress, gather feedback, and align development work with business priorities.",
-                "Scoped and estimated hours for out-of-scope feature requests, enabling transparent client communication and project planning.",
-                "Set up accurate Google Analytics tracking and config alongside Paid Search teams to support campaign performance."
+                "Built and maintained fast, scalable Shopify stores using Liquid and Shopify APIs, including custom app development with Remix and Prisma. Also designed and deployed tailored WordPress sites aligned with brand identities and business goals.",
+                "Implemented technical SEO improvements to lift organic rankings and site health, configured accurate Google Analytics tracking, and developed a real-time client performance dashboard to enable data-driven optimizations.",
+                "Fostered strong client relationships by running weekly meetings to report progress, gather feedback, and align development work with business priorities, while also scoping and estimating new feature requests."
             ]
         },
         {
             "id": 2,
             "company": "Queensland University of Technology",
-            "position": "Bachelor of Information Technology",
-            "duration": "Feb 2021 — November 2023",
+            "position": "Bachelor of IT",
+            "duration": "Feb 2021 — Nov 2023",
             "logo": "/qut-logo.png",
             "logoAlt": "QUT Logo",
             "description": "",
