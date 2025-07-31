@@ -22,7 +22,8 @@
                 "Responsive Design for Mobile and Desktop",
                 "Group Creation and Management",
                 "Notification System for Group Invites",
-                "Movie Search & Details"
+                "Movie Search & Details",
+                " "
             ],
             "githubURL": "https://github.com/8liam/ourmovielist",
             "url": "https://ourmovielist.vercel.app"

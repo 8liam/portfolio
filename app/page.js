@@ -42,7 +42,7 @@ export default function Home() {
       </div>
 
       <div className="h-[40vh] absolute inset-0 text-center flex flex-col justify-center items-center">
-        <h1 className="text-4xl font-semibold z-10 text-black font-mono uppercase tracking-tight ">
+        <h1 className="md:text-5xl text-3xl font-bold z-10 text-black uppercase tracking-tight ">
           Liam Grant
         </h1>
         <span className="z-10 font-mono">[SOFTWARE ENGINEER]</span>

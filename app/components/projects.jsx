@@ -62,32 +62,31 @@ export default function Projects() {
                             }`}>
                             <div className="grid lg:grid-cols-3 grid-cols-1">
                                 <div className="p-4 border-[#1C1C21] lg:border-r border-b lg:border-b-0">
-                                    <h4 className="font-sans font-semibold text-lg">{currentProject.name}</h4>
-                                    <p className="text-lg">{currentProject.tagline}</p>
+                                    <h4 className="font-sans font-semibold text-2xl uppercase">{currentProject.name}</h4>
                                 </div>
 
-                                <div className="p-4 border-[#1C1C21] lg:border-r lg:col-span-2">
+                                <div className="p-4 border-[#1C1C21]  lg:col-span-2">
                                     {currentProject.languages.map((language, index) => (
 
-                                        <span key={index} className="font-mono uppercase ">{language}{index !== currentProject.languages.length - 1 ? " / " : ""}</span>
+                                        <span key={index} className="font-mono text-2xl uppercase ">{language}{index !== currentProject.languages.length - 1 ? " / " : ""}</span>
                                     ))}
 
 
 
                                 </div>
                             </div>
-                            <div className="border-[#1C1C21] border-t lg:border-r" >
+                            <div className="border-[#1C1C21] border-t " >
                                 <div className="grid lg:grid-cols-2 grid-cols-1 max-h-[1020px]">
                                     <div className="border-[#1C1C21] lg:border-r overflow-auto order-2 lg:order-1 flex flex-col">
-                                        <div className="p-4 flex-1">
-                                            <p>{currentProject.description}</p>
+                                        <div className="flex-1">
+                                            <p className="p-4">{currentProject.description}</p>
 
                                             {currentProject.features && currentProject.features.length > 0 && (
-                                                <div className="space-y-1 mt-4">
-                                                    <p className="text-lg">Features</p>
-                                                    <div className="space-y-1 px-4 grid-cols-1 lg:grid-cols-2 grid gap-x-2">
+                                                <div className="">
+                                                    <p className="text-xl font-normal p-4 border-[#1C1C21] border-t">Features</p>
+                                                    <div className="grid-cols-1 lg:grid-cols-2 grid border-[#1C1C21] border-b">
                                                         {currentProject.features.map((feature, index) => (
-                                                            <p key={index} className="before:content-['-'] before:inline-block before:w-[1em] before:-ml-[1em] before:text-gray-500 before:mr-1">{feature}</p>
+                                                            <div key={index} className={`p-4 border-[#1C1C21] border-t ${index % 2 == 0 ? 'border-r' : ''} ${currentProject.features.length % 2 !== 0 && index === currentProject.features.length - 2 ? 'border-b' : ''}`}>{feature}</div>
                                                         ))}
                                                     </div>
                                                 </div>
