@@ -68,7 +68,7 @@ export default function Projects() {
                                 <div className="p-4 border-[#1C1C21]  lg:col-span-2">
                                     {currentProject.languages.map((language, index) => (
 
-                                        <span key={index} className="font-mono text-2xl uppercase ">{language}{index !== currentProject.languages.length - 1 ? " / " : ""}</span>
+                                        <span key={index} className="font-mono text-xl uppercase ">{language}{index !== currentProject.languages.length - 1 ? " / " : ""}</span>
                                     ))}
 
 

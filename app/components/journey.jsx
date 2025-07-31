@@ -53,20 +53,28 @@ export default function Journey() {
                     </div>
 
                     {/* Content Area */}
-                    <div className="p-4 flex-1 min-h-[400px] flex flex-col overflow-hidden">
+                    <div className="flex-1 min-h-[400px] flex flex-col overflow-hidden">
                         <div className={`transition-all duration-300 ease-in-out ${isTransitioning
                             ? 'opacity-0 transform translate-y-4'
                             : 'opacity-100 transform translate-y-0'
                             }`}>
-                            <div className="mb-2">
-                                <h4 className="font-sans font-semibold text-lg">{currentExperience.company}</h4>
-                                <h5 className="text-gray-700">{currentExperience.position}</h5>
-                                <p className="text-gray-900">{currentExperience.duration}</p>
+                            <div className="grid grid-cols-12">
+                                <div className="lg:col-span-4 col-span-12 p-4 border-[#1C1C21] border-b lg:border-r">
+                                    <h4 className="font-sans font-semibold text-2xl">{currentExperience.company}</h4>
+                                </div>
+                                <div className="lg:col-span-4 col-span-12 p-4 border-[#1C1C21] border-b lg:border-r text-center">
+                                    <h5 className="font-sans font-semibold text-2xl uppercase">{currentExperience.position}</h5>
+                                </div>
+                                <div className="lg:col-span-4 col-span-12 p-4 border-[#1C1C21] border-b ">
+                                    <p className="font-sans font-normal text-2xl text-right uppercase">{currentExperience.duration}</p>
+                                </div>
                             </div>
-                            <p className="mb-3">{currentExperience.description}</p>
+                            {currentExperience.description && (
+                                <p className="p-4">{currentExperience.description}</p>
+                            )}
 
                             {currentExperience.points && currentExperience.points.length > 0 && (
-                                <div className="flex-1">
+                                <div className="flex-1 p-4">
                                     <div className="space-y-1 px-4 ">
                                         {currentExperience.points.map((point, index) => (
                                             <p key={index} className={`before:content-['-'] before:inline-block before:w-[1em] before:-ml-[1em] before:text-gray-500 before:mr-1 transition-all duration-300 ease-in-out ${isTransitioning
