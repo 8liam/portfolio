@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import projectData from "../../data/projects.json";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import StaggeredText from "./StaggeredText";
 
 export default function Projects() {
     const [activeProject, setActiveProject] = useState(0);
@@ -20,12 +21,14 @@ export default function Projects() {
             setTimeout(() => {
                 setIsTransitioning(false);
             }, 50);
-        }, 150);
+        }, 100);
     };
 
     return (
         <section className="border-[#1C1C21] border-b" id="projects">
-            <h2 className="p-4 text-3xl font-bold border-b uppercase">{projectData.title}</h2>
+            <h2 className="p-4 text-3xl font-bold border-b uppercase">
+                <StaggeredText>{projectData.title}</StaggeredText>
+            </h2>
 
             <div className="bg-white  border-[#1C1C21] min-h-[400px]">
                 <div className="flex h-full">
@@ -97,14 +100,14 @@ export default function Projects() {
                                             {currentProject.url && (
                                                 <Link href={currentProject.url} target="_blank">
                                                     <div className="p-4 border-[#1C1C21] border-t lg:border-r  lg:border-b-0 flex flex-row gap-2 justify-center items-center">
-                                                        Live Site <ArrowUpRight width={20} height={20} />
+                                                        {currentProject.urlTitle} <ArrowUpRight width={20} height={20} />
                                                     </div>
                                                 </Link>
                                             )}
                                             {currentProject.githubURL && (
                                                 <Link href={currentProject.githubURL} target="_blank">
                                                     <div className="p-4 border-[#1C1C21] border-t  flex flex-row gap-2 justify-center items-center">
-                                                        View on Github <ArrowUpRight width={20} height={20} />
+                                                        {currentProject.githubURLTitle} <ArrowUpRight width={20} height={20} />
                                                     </div>
                                                 </Link>
                                             )}

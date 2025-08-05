@@ -7,25 +7,19 @@ import Technologies from "./components/technologies";
 import Link from "next/link";
 import Projects from "./components/projects";
 import { ArrowDown } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import ScrollBounds from "./components/SmoothScroll";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const viewportHeight = window.innerHeight;
-      setScrolled(scrollPosition > viewportHeight);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleScroll = (scrollPosition) => {
+    const viewportHeight = window.innerHeight;
+    setScrolled(scrollPosition > viewportHeight);
+  };
 
   return (
-    <>
-
+    <ScrollBounds onScroll={handleScroll}>
       <div className={`z-50 grid grid-cols-2 w-screen px-4 py-2 fixed transition-all duration-0 ${scrolled ? 'bg-white/50 backdrop-blur-md border-b' : ''}`}>
         <div className="gap-2 flex font-medium text-sm lg:text-md">
           <span className="hover:tracking-wider duration-300">LIAM</span>
@@ -45,7 +39,7 @@ export default function Home() {
         <h1 className="md:text-5xl text-3xl font-bold z-10 text-black uppercase tracking-tight ">
           Liam Grant
         </h1>
-        <span className="z-10 font-mono">[SOFTWARE ENGINEER]</span>
+        <span id="software-title" className="z-10 font-mono">[SOFTWARE ENGINEER]</span>
       </div>
       <div className="absolute inset-0 text-center flex flex-col items-center justify-end pb-24 h-[100vh] ">
         <div className="z-10 bg-black/1 backdrop-blur-xs rounded-2xl px-6 py-1 text-center flex flex-col items-center justify-center">
@@ -60,10 +54,6 @@ export default function Home() {
       <Journey />
       <Projects />
       <Footer />
-    </>
-
-
-
-
+    </ScrollBounds>
   );
 }

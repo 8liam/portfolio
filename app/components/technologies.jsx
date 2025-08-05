@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import languagesData from "../../data/languages.json"; // Adjust path as needed
+import StaggeredText from "./StaggeredText";
 
 export default function Technologies() {
     const languages = languagesData.languages;
@@ -14,7 +15,7 @@ export default function Technologies() {
         if (scrollerRef.current) {
             timeoutRef.current = setTimeout(() => {
                 scrollerRef.current.classList.add("paused");
-            }, 150); // 150ms delay before pausing for smoother UX
+            }, 100); // 150ms delay before pausing for smoother UX
         }
     };
 
@@ -27,11 +28,13 @@ export default function Technologies() {
         }
     };
 
+
+
     return (
         <section className="border-[#1C1C21] border-t">
             <div className="border-b border-[#1C1C21]">
-                <h2 className="p-4 text-3xl font-bold flex items-center gap-2 border-[#1C1C21] uppercase">
-                    {languagesData.title}
+                <h2 className="p-4 text-3xl font-bold flex items-center border-[#1C1C21] uppercase">
+                    <StaggeredText>{languagesData.title}</StaggeredText>
                 </h2>
             </div>
             <div className="bg-white">
