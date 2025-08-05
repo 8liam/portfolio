@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import journeyData from "../../data/journey.json";
+import StaggeredText from "./StaggeredText";
 
 export default function Journey() {
     const [activeExperience, setActiveExperience] = useState(0);
@@ -18,12 +19,14 @@ export default function Journey() {
             setTimeout(() => {
                 setIsTransitioning(false);
             }, 50);
-        }, 150);
+        }, 100);
     };
 
     return (
         <section className="border-[#1C1C21] border-b" id="journey">
-            <h2 className="p-4 text-3xl font-bold border-b uppercase">{journeyData.title}</h2>
+            <h2 className="p-4 text-3xl font-bold border-b uppercase">
+                <StaggeredText>{journeyData.title}</StaggeredText>
+            </h2>
 
             <div className="bg-white  border-[#1C1C21] min-h-[400px]">
                 <div className="flex h-full">
@@ -62,11 +65,11 @@ export default function Journey() {
                                 <div className="lg:col-span-4 col-span-12 p-4 border-[#1C1C21] border-b lg:border-r">
                                     <h4 className="font-sans font-semibold text-2xl">{currentExperience.company}</h4>
                                 </div>
-                                <div className="lg:col-span-4 col-span-12 p-4 border-[#1C1C21] border-b lg:border-r text-center">
-                                    <h5 className="font-sans font-semibold text-2xl uppercase">{currentExperience.position}</h5>
+                                <div className="lg:col-span-4 col-span-12 p-4 border-[#1C1C21] border-b lg:border-r ">
+                                    <h5 className="font-sans font-semibold text-2xl uppercase lg:text-center">{currentExperience.position}</h5>
                                 </div>
                                 <div className="lg:col-span-4 col-span-12 p-4 border-[#1C1C21] border-b ">
-                                    <p className="font-sans font-normal text-2xl text-right uppercase">{currentExperience.duration}</p>
+                                    <p className="font-sans font-normal text-2xl lg:text-right uppercase">{currentExperience.duration}</p>
                                 </div>
                             </div>
                             {currentExperience.description && (
