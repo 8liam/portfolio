@@ -3,6 +3,31 @@
     "projects": [
         {
             "id": 1,
+            "name": "GAEA - Gen AI Code Generation",
+            "logo": "/projects/gaea-icon.png",
+            "logoAlt": "GAEA Logo",
+            "tagline": "Generative AI Code Generation",
+            "description": "A modern, open-source playground for generating, previewing, and applying UI code via OpenRouter. Built on Next.js App Router with TypeScript and Tailwind CSS, it streams AI-generated snippets into a live, sandboxed preview.",
+            "image": "/projects/gaea.webp",
+            "imageAlt": "GAEA Home Page",
+            "languages": [
+                "Next.js",
+                "Tailwind CSS",
+                "OpenRouter"
+            ],
+            "features": [
+                "AI Integration with OpenRouter",
+                "Live Code Preview",
+                "Sandboxed Environment",
+                "Prompt Engine for Custom Queries"
+            ],
+            "githubURL": "https://github.com/8liam/gaea",
+            "githubURLTitle": "View Source Code",
+            "url": "https://gaeacode.vercel.app/",
+            "urlTitle": "Live Site"
+        },
+        {
+            "id": 2,
             "name": "OurMovieList",
             "logo": "/projects/ourmovielist-icon.png",
             "logoAlt": "OurMovieList Logo",
@@ -31,7 +56,7 @@
             "urlTitle": "Live Site"
         },
         {
-            "id": 2,
+            "id": 3,
             "name": "OzBargain - Raycast Extension",
             "logo": "/projects/ozbargain-raycast-icon.png",
             "logoAlt": "OzBargain Raycast Logo",
