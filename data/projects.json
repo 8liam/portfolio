@@ -57,6 +57,30 @@
         },
         {
             "id": 3,
+            "name": "CandleView - Memecoin Tracker",
+            "logo": "/projects/candleview-icon.png",
+            "logoAlt": "CandleView Icon",
+            "tagline": "MacOS Native Memecoin Watcher",
+            "description": "CandleView is a MacOS Native app that allows you track Memecoins from a Contract Address on the Solana Network. CandleView then displays the price action of the coin in a simple candlestick chart, allowing you to quickly glance at how the coin is performing, all within an overlay window - so it's always visible. No matter what is in the background",
+            "image": "/projects/candleview.webp",
+            "imageAlt": "CandleView MacOS Screenshot",
+            "languages": [
+                "Swift",
+                "SwiftUI"
+            ],
+            "features": [
+                "Retrieves up-to-date price data every 30 seconds from the DexScreener API.",
+                "Overlay Window that is always on top, even when switching between apps.",
+                "Simple and clean candlestick chart to visualize price action.",
+                "Allows users to input any Solana contract address to track different memecoins."
+            ],
+            "githubURL": "https://github.com/raycast/extensions/tree/5e45313048426136f6aaab703b57a952117a0e06/extensions/ozbargain-deals/",
+            "githubURLTitle": "View Source Code",
+            "url": "https://www.raycast.com/55555/ozbargain-deals",
+            "urlTitle": "Install Extension"
+        },
+        {
+            "id": 4,
             "name": "OzBargain - Raycast Extension",
             "logo": "/projects/ozbargain-raycast-icon.png",
             "logoAlt": "OzBargain Raycast Logo",
