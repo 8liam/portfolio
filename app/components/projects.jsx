@@ -1,27 +1,33 @@
 "use client"
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import projectData from "../../data/projects.json";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import StaggeredText from "./StaggeredText";
+import ScrambleText from "./ScrambleText";
+import { gsap } from "gsap";
 
 export default function Projects() {
     const [activeProject, setActiveProject] = useState(0);
-    const [isTransitioning, setIsTransitioning] = useState(false);
+    const [isAnimating, setIsAnimating] = useState(false);
     const currentProject = projectData.projects[activeProject];
 
+    const topRef = useRef(null);    // title + technologies row
+    const leftRef = useRef(null);   // description/features/links column
+    const rightRef = useRef(null);  // image column
+
     const handleProjectChange = (newIndex) => {
-        if (newIndex === activeProject) return;
+        if (newIndex === activeProject || isAnimating) return;
+        setIsAnimating(true);
 
-        setIsTransitioning(true);
+        const items = [leftRef.current, rightRef.current].filter(Boolean);
 
-        setTimeout(() => {
-            setActiveProject(newIndex);
-            setTimeout(() => {
-                setIsTransitioning(false);
-            }, 50);
-        }, 100);
+        const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+        tl.to(items, { opacity: 0, duration: 0.35, stagger: 0.06 })
+            .add(() => setActiveProject(newIndex))
+            .fromTo(items, { opacity: 0 }, { opacity: 1, duration: 0.35, stagger: 0.06, immediateRender: false }, "+=0.05")
+            .add(() => setIsAnimating(false));
     };
 
     return (
@@ -59,19 +65,18 @@ export default function Projects() {
 
                     {/* Content Area */}
                     <div className=" flex-1 min-h-[400px] flex flex-col overflow-hidden">
-                        <div className={`transition-all duration-300 ease-in-out ${isTransitioning
-                            ? 'opacity-0 transform translate-y-4'
-                            : 'opacity-100 transform translate-y-0'
-                            }`}>
-                            <div className="grid lg:grid-cols-3 grid-cols-1">
+                        <div>
+                            <div ref={topRef} className="grid lg:grid-cols-3 grid-cols-1">
                                 <div className="p-4 border-[#1C1C21] lg:border-r border-b lg:border-b-0">
-                                    <h4 className="font-sans font-semibold text-2xl uppercase">{currentProject.name}</h4>
+                                    <ScrambleText as="h4" className="font-sans font-semibold text-2xl uppercase" text={currentProject.name} />
                                 </div>
 
                                 <div className="p-4 border-[#1C1C21]  lg:col-span-2 self-center">
                                     {currentProject.languages.map((language, index) => (
-
-                                        <span key={index} className="font-mono text-xl uppercase ">{language}{index !== currentProject.languages.length - 1 ? " / " : ""}</span>
+                                        <span key={`${language}-${index}`}>
+                                            <ScrambleText className="font-mono text-xl uppercase " text={language} />
+                                            {index !== currentProject.languages.length - 1 ? <span className="font-mono text-xl uppercase "> {" / "} </span> : null}
+                                        </span>
                                     ))}
 
 
@@ -80,7 +85,7 @@ export default function Projects() {
                             </div>
                             <div className="border-[#1C1C21] border-t " >
                                 <div className="grid lg:grid-cols-2 grid-cols-1 max-h-[1020px]">
-                                    <div className="border-[#1C1C21] lg:border-r overflow-auto order-2 lg:order-1 flex flex-col">
+                                    <div ref={leftRef} className="border-[#1C1C21] lg:border-r overflow-auto order-2 lg:order-1 flex flex-col">
                                         <div className="flex-1">
                                             <p className="p-4">{currentProject.description}</p>
 
@@ -113,16 +118,13 @@ export default function Projects() {
                                             )}
                                         </div>
                                     </div>
-                                    <div className="p-4 select-none order-1 lg:order-2">
+                                    <div ref={rightRef} className="p-4 select-none order-1 lg:order-2">
                                         <Image
                                             src={currentProject.image}
                                             width={1680}
                                             height={1020}
                                             alt={currentProject.imageAlt}
-                                            className={`rounded-md transition-all duration-300 ease-in-out ${isTransitioning
-                                                ? 'opacity-0 transform translate-y-4'
-                                                : 'opacity-100 transofmr translate-y-0'
-                                                }`}
+                                            className={`rounded-md`}
                                         />
                                     </div>
                                 </div>

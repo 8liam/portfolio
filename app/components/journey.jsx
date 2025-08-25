@@ -1,25 +1,27 @@
 "use client"
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import journeyData from "../../data/journey.json";
 import StaggeredText from "./StaggeredText";
+import ScrambleText from "./ScrambleText";
+import { gsap } from "gsap";
 
 export default function Journey() {
     const [activeExperience, setActiveExperience] = useState(0);
-    const [isTransitioning, setIsTransitioning] = useState(false);
+    const [isAnimating, setIsAnimating] = useState(false);
     const currentExperience = journeyData.experiences[activeExperience];
+    const contentRef = useRef(null);
 
     const handleExperienceChange = (newIndex) => {
-        if (newIndex === activeExperience) return;
+        if (newIndex === activeExperience || isAnimating) return;
+        setIsAnimating(true);
 
-        setIsTransitioning(true);
-
-        setTimeout(() => {
-            setActiveExperience(newIndex);
-            setTimeout(() => {
-                setIsTransitioning(false);
-            }, 50);
-        }, 100);
+        const target = contentRef.current ? [contentRef.current] : [];
+        const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+        tl.to(target, { opacity: 0, duration: 0.3 })
+            .add(() => setActiveExperience(newIndex))
+            .fromTo(target, { opacity: 0 }, { opacity: 1, duration: 0.35, immediateRender: false }, "+=0.05")
+            .add(() => setIsAnimating(false));
     };
 
     return (
@@ -57,40 +59,36 @@ export default function Journey() {
 
                     {/* Content Area */}
                     <div className="flex-1 min-h-[400px] flex flex-col overflow-hidden">
-                        <div className={`transition-all duration-300 ease-in-out ${isTransitioning
-                            ? 'opacity-0 transform translate-y-4'
-                            : 'opacity-100 transform translate-y-0'
-                            }`}>
+                        <div>
                             <div className="grid grid-cols-12">
                                 <div className="lg:col-span-4 col-span-12 p-4 border-[#1C1C21] border-b lg:border-r">
-                                    <h4 className="font-sans font-semibold text-2xl">{currentExperience.company}</h4>
+                                    <ScrambleText as="h4" className="font-sans font-semibold text-2xl" text={currentExperience.company} />
                                 </div>
                                 <div className="lg:col-span-4 col-span-12 p-4 border-[#1C1C21] border-b lg:border-r ">
-                                    <h5 className="font-sans font-semibold text-2xl uppercase lg:text-center">{currentExperience.position}</h5>
+                                    <ScrambleText as="h5" className="font-sans font-semibold text-2xl uppercase lg:text-center" text={currentExperience.position} />
                                 </div>
                                 <div className="lg:col-span-4 col-span-12 p-4 border-[#1C1C21] border-b ">
-                                    <p className="font-sans font-normal text-2xl lg:text-right uppercase">{currentExperience.duration}</p>
+                                    <ScrambleText as="p" className="font-sans font-normal text-2xl lg:text-right uppercase" text={currentExperience.duration} />
                                 </div>
                             </div>
-                            {currentExperience.description && (
-                                <p className="p-4">{currentExperience.description}</p>
-                            )}
+                            <div ref={contentRef}>
+                                {currentExperience.description && (
+                                    <p className="p-4">{currentExperience.description}</p>
+                                )}
 
-                            {currentExperience.points && currentExperience.points.length > 0 && (
-                                <div className="flex-1 p-4">
-                                    <div className="space-y-1 px-4 ">
-                                        {currentExperience.points.map((point, index) => (
-                                            <p key={index} className={`before:content-['-'] before:inline-block before:w-[1em] before:-ml-[1em] before:text-gray-500 before:mr-1 transition-all duration-300 ease-in-out ${isTransitioning
-                                                ? 'opacity-0 transform translate-x-4'
-                                                : 'opacity-100 transform translate-x-0'
-                                                }`} style={{ transitionDelay: `${index * 50}ms` }}>
-                                                {point}
-                                            </p>
-                                        ))}
+                                {currentExperience.points && currentExperience.points.length > 0 && (
+                                    <div className="flex-1 p-4">
+                                        <div className="space-y-1 px-4 ">
+                                            {currentExperience.points.map((point, index) => (
+                                                <p key={index} className={`before:content-['-'] before:inline-block before:w-[1em] before:-ml-[1em] before:text-gray-500 before:mr-1`}>
+                                                    {point}
+                                                </p>
+                                            ))}
 
+                                        </div>
                                     </div>
-                                </div>
-                            )}
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
