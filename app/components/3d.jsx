@@ -38,7 +38,7 @@ export default function ThreeD() {
     const [isAsciiReady, setIsAsciiReady] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
-    
+
 
     useEffect(() => {
         // Delay ASCII renderer initialization to ensure canvas is ready
@@ -63,13 +63,19 @@ export default function ThreeD() {
 
             {/* Loading Overlay */}
             {isLoading && (
-                <div className={`absolute inset-0 bg-white z-10 flex items-center justify-center transition-opacity duration-200 ${isAsciiReady ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                    }`}>
-                    <div className="flex flex-col items-center">
-                        <div className="w-12 h-12 border-4 border-gray-300 border-t-black rounded-full animate-spin mb-4"></div>
-                        <p className="text-gray-600 font-medium">Entering Experience</p>
+                <>
+                    {/* Centered Spinner */}
+                    <div className={`absolute inset-0 bg-white z-10 flex items-center justify-center transition-opacity duration-200 ${isAsciiReady ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                        }`}>
+
                     </div>
-                </div>
+
+                    {/* Bottom Left Full Width Text */}
+                    <div className={`absolute bottom-0 left-0 right-0 z-10 p-8 transition-opacity duration-200 ${isAsciiReady ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                        }`}>
+                        <p className="text-black uppercase font-bold lg:text-8xl text-4xl text-left">Entering Experience</p>
+                    </div>
+                </>
             )}
 
             <Canvas className="w-full h-full absolute inset-0 select-none">
