@@ -101,17 +101,17 @@ export default function Projects() {
                                             )}
                                         </div>
 
-                                        <div className="grid grid-cols-1 lg:grid-cols-2 border-[#1C1C21]  text-center mt-auto">
+                                        <div className={`border-[#1C1C21] text-center mt-auto ${(currentProject.url && currentProject.githubURL) ? 'grid grid-cols-1 lg:grid-cols-2' : 'block'}`}>
                                             {currentProject.url && (
                                                 <Link href={currentProject.url} target="_blank">
-                                                    <div className="p-4 border-[#1C1C21] border-t lg:border-r  lg:border-b-0 flex flex-row gap-2 justify-center items-center">
+                                                    <div className={`p-4 border-[#1C1C21] border-t flex flex-row gap-2 justify-center items-center ${(currentProject.url && currentProject.githubURL) ? 'lg:border-r lg:border-b-0' : ''}`}>
                                                         {currentProject.urlTitle} <ArrowUpRight width={20} height={20} />
                                                     </div>
                                                 </Link>
                                             )}
                                             {currentProject.githubURL && (
                                                 <Link href={currentProject.githubURL} target="_blank">
-                                                    <div className="p-4 border-[#1C1C21] border-t  flex flex-row gap-2 justify-center items-center">
+                                                    <div className={`p-4 border-[#1C1C21] border-t flex flex-row gap-2 justify-center items-center ${(currentProject.url && currentProject.githubURL) ? '' : ''}`}>
                                                         {currentProject.githubURLTitle} <ArrowUpRight width={20} height={20} />
                                                     </div>
                                                 </Link>

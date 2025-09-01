@@ -74,10 +74,8 @@
                 "Simple and clean candlestick chart to visualize price action.",
                 "Allows users to input any Solana contract address to track different memecoins."
             ],
-            "githubURL": "https://github.com/raycast/extensions/tree/5e45313048426136f6aaab703b57a952117a0e06/extensions/ozbargain-deals/",
-            "githubURLTitle": "View Source Code",
-            "url": "https://www.raycast.com/55555/ozbargain-deals",
-            "urlTitle": "Install Extension"
+            "githubURL": "https://github.com/8liam/CandleView/",
+            "githubURLTitle": "View Source Code"
         },
         {
             "id": 4,
