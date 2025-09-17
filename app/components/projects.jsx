@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import projectData from "../../data/projects.json";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -11,15 +11,34 @@ import { gsap } from "gsap";
 export default function Projects() {
     const [activeProject, setActiveProject] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
+    const [imageLoaded, setImageLoaded] = useState(false);
     const currentProject = projectData.projects[activeProject];
 
     const topRef = useRef(null);    // title + technologies row
     const leftRef = useRef(null);   // description/features/links column
     const rightRef = useRef(null);  // image column
 
+    // Preload all project images
+    useEffect(() => {
+        const preloadImages = () => {
+            projectData.projects.forEach((project) => {
+                const img = new window.Image();
+                img.src = project.image;
+            });
+        };
+
+        preloadImages();
+    }, []);
+
+    // Reset image loaded state when project changes
+    useEffect(() => {
+        setImageLoaded(false);
+    }, [activeProject]);
+
     const handleProjectChange = (newIndex) => {
         if (newIndex === activeProject || isAnimating) return;
         setIsAnimating(true);
+        setImageLoaded(false);
 
         const items = [leftRef.current, rightRef.current].filter(Boolean);
 

@@ -5,11 +5,11 @@
             "id": 1,
             "company": "PeriscoPe",
             "position": "Junior Web Developer",
-            "duration": "May 2024 — Present",
+            "duration": "May 2024 — August 2025",
             "logo": "/periscope-logo.webp",
             "logoAlt": "PeriscoPe Logo",
             "description": "",
-            "current": true,
+            "current": false,
             "points": [
                 "Built and maintained fast, scalable Shopify stores using Liquid and Shopify APIs, including custom app development with Remix and Prisma. Also designed and deployed tailored WordPress sites aligned with brand identities and business goals.",
                 "Implemented technical SEO improvements to lift organic rankings and site health, configured accurate Google Analytics tracking, and developed a real-time client performance dashboard to enable data-driven optimizations.",
