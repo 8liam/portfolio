@@ -3,6 +3,19 @@
     "experiences": [
         {
             "id": 1,
+            "company": "Westpac Bank",
+            "position": "Engineer",
+            "duration": "Nov 2025 — Present",
+            "logo": "/westpac-logo.webp",
+            "logoAlt": "Westpac Bank Logo",
+            "description": "",
+            "current": true,
+            "points": [
+                "Joined Westpac Bank as an Engineer in the Next Wave Program, and currently work on building customer-facing mortgage technologies."
+            ]
+        },
+        {
+            "id": 2,
             "company": "PeriscoPe",
             "position": "Junior Web Developer",
             "duration": "May 2024 — August 2025",
@@ -17,7 +30,7 @@
             ]
         },
         {
-            "id": 2,
+            "id": 3,
             "company": "Queensland University of Technology",
             "position": "Bachelor of IT",
             "duration": "Feb 2021 — Nov 2023",
