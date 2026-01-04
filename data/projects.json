@@ -1,102 +1,93 @@
 {
-    "title": "Projects",
-    "projects": [
-        {
-            "id": 1,
-            "name": "GAEA - Gen AI Code Generation",
-            "logo": "/projects/gaea-icon.png",
-            "logoAlt": "GAEA Logo",
-            "tagline": "Generative AI Code Generation",
-            "description": "A modern, open-source playground for generating, previewing, and applying UI code via OpenRouter. Built on Next.js App Router with TypeScript and Tailwind CSS, it streams AI-generated snippets into a live, sandboxed preview.",
-            "image": "/projects/gaea.webp",
-            "imageAlt": "GAEA Home Page",
-            "languages": [
-                "Next.js",
-                "Tailwind CSS",
-                "OpenRouter"
-            ],
-            "features": [
-                "AI Integration with OpenRouter",
-                "Live Code Preview",
-                "Sandboxed Environment",
-                "Prompt Engine for Custom Queries"
-            ],
-            "githubURL": "https://github.com/8liam/gaea",
-            "githubURLTitle": "View Source Code",
-            "url": "https://gaeacode.vercel.app/",
-            "urlTitle": "Live Site"
-        },
-        {
-            "id": 2,
-            "name": "OurMovieList",
-            "logo": "/projects/ourmovielist-icon.png",
-            "logoAlt": "OurMovieList Logo",
-            "tagline": "Collaborative Movie Discovery & Watchlists",
-            "description": "OurMovieList is a dynamic and interactive web application designed to enhance how friends and groups discover, manage, and share their favorite movies. This platform offers a seamless experience for tracking trending films, creating and managing private groups, and building shared watchlists, fostering a collaborative movie-watching journey.",
-            "image": "/projects/ourmovielist.webp",
-            "imageAlt": "OurMovieList Home Page",
-            "languages": [
-                "Next.js",
-                "Supabase",
-                "PostgreSQL",
-                "Prisma ORM",
-                "Tailwind CSS"
-            ],
-            "features": [
-                "Secure User Authentication with Supabase Auth",
-                "Responsive Design for Mobile and Desktop",
-                "Group Creation and Management",
-                "Notification System for Group Invites",
-                "Movie Search & Details",
-                " "
-            ],
-            "githubURL": "https://github.com/8liam/ourmovielist",
-            "githubURLTitle": "View Source Code",
-            "url": "https://ourmovielist.vercel.app",
-            "urlTitle": "Live Site"
-        },
-        {
-            "id": 3,
-            "name": "CandleView - Memecoin Tracker",
-            "logo": "/projects/candleview-icon.png",
-            "logoAlt": "CandleView Icon",
-            "tagline": "MacOS Native Memecoin Watcher",
-            "description": "CandleView is a MacOS Native app that allows you track Memecoins from a Contract Address on the Solana Network. CandleView then displays the price action of the coin in a simple candlestick chart, allowing you to quickly glance at how the coin is performing, all within an overlay window - so it's always visible. No matter what is in the background",
-            "image": "/projects/candleview.webp",
-            "imageAlt": "CandleView MacOS Screenshot",
-            "languages": [
-                "Swift",
-                "SwiftUI"
-            ],
-            "features": [
-                "Retrieves up-to-date price data every 30 seconds from the DexScreener API.",
-                "Overlay Window that is always on top, even when switching between apps.",
-                "Simple and clean candlestick chart to visualize price action.",
-                "Allows users to input any Solana contract address to track different memecoins."
-            ],
-            "githubURL": "https://github.com/8liam/CandleView/",
-            "githubURLTitle": "View Source Code"
-        },
-        {
-            "id": 4,
-            "name": "OzBargain - Raycast Extension",
-            "logo": "/projects/ozbargain-raycast-icon.png",
-            "logoAlt": "OzBargain Raycast Logo",
-            "tagline": "Latest OzBargain deals powered by Raycast",
-            "description": "Raycast is a powerful launcher and productivity tool, with an api that allows developers to publish extensions onto their store platform. This allows anyone and everyone using Raycast to download whatever extensions will make them more productive. The OzBargain Deals Raycast Extension allows users to see and explore the latest deals posted on OzBargain through Raycast — eliminating the friction of checking the platform multiple times a day.",
-            "image": "/projects/ozbargain-raycast.webp",
-            "imageAlt": "OzBargain Raycast Demo",
-            "languages": [
-                "TypeScript"
-            ],
-            "features": [
-                "Retrieves up-to-date info from RSS Feed of OzBargain platform.",
-                "Data parsed from RSS feed to display on details page."
-            ],
-            "githubURL": "https://github.com/raycast/extensions/tree/5e45313048426136f6aaab703b57a952117a0e06/extensions/ozbargain-deals/",
-            "githubURLTitle": "View Source Code",
-            "url": "https://www.raycast.com/55555/ozbargain-deals",
-            "urlTitle": "Install Extension"
-        }
-    ]
+  "title": "Projects",
+  "projects": [
+    {
+      "id": 1,
+      "name": "GAEA - Gen AI Code Generation",
+      "logo": "/projects/gaea-icon.png",
+      "logoAlt": "GAEA Logo",
+      "tagline": "Generative AI Code Generation",
+      "description": "A modern, open-source playground for generating, previewing, and applying UI code via OpenRouter. Built on Next.js App Router with TypeScript and Tailwind CSS, it streams AI-generated snippets into a live, sandboxed preview.",
+      "image": "/projects/gaea.webp",
+      "imageAlt": "GAEA Home Page",
+      "languages": ["Next.js", "Tailwind CSS", "OpenRouter"],
+      "features": [
+        "AI Integration with OpenRouter",
+        "Live Code Preview",
+        "Sandboxed Environment",
+        "Prompt Engine for Custom Queries"
+      ],
+      "githubURL": "https://github.com/8liam/gaea",
+      "githubURLTitle": "View Source Code",
+      "url": "https://gaeacode.vercel.app/",
+      "urlTitle": "Live Site"
+    },
+    {
+      "id": 2,
+      "name": "OurMovieList",
+      "logo": "/projects/ourmovielist-icon.png",
+      "logoAlt": "OurMovieList Logo",
+      "tagline": "Collaborative Movie Discovery & Watchlists",
+      "description": "OurMovieList is a dynamic and interactive web application designed to enhance how friends and groups discover, manage, and share their favorite movies. This platform offers a seamless experience for tracking trending films, creating and managing private groups, and building shared watchlists, fostering a collaborative movie-watching journey.",
+      "image": "/projects/ourmovielist.webp",
+      "imageAlt": "OurMovieList Home Page",
+      "languages": [
+        "Next.js",
+        "Supabase",
+        "PostgreSQL",
+        "Prisma ORM",
+        "Tailwind CSS"
+      ],
+      "features": [
+        "Secure User Authentication with Supabase Auth",
+        "Responsive Design for Mobile and Desktop",
+        "Group Creation and Management",
+        "Notification System for Group Invites",
+        "Movie Search & Details",
+        " "
+      ],
+      "githubURL": "https://github.com/8liam/ourmovielist",
+      "githubURLTitle": "View Source Code",
+      "url": "https://ourmovielist.vercel.app",
+      "urlTitle": "Live Site"
+    },
+    {
+      "id": 3,
+      "name": "Memecoin Tracker",
+      "logo": "/projects/candleview-icon.png",
+      "logoAlt": "CandleView Icon",
+      "tagline": "MacOS Native Memecoin Watcher",
+      "description": "CandleView is a MacOS Native app that allows you track Memecoins from a Contract Address on the Solana Network. CandleView then displays the price action of the coin in a simple candlestick chart, allowing you to quickly glance at how the coin is performing, all within an overlay window - so it's always visible. No matter what is in the background",
+      "image": "/projects/candleview.webp",
+      "imageAlt": "CandleView MacOS Screenshot",
+      "languages": ["Swift", "SwiftUI"],
+      "features": [
+        "Retrieves up-to-date price data every 30 seconds from the DexScreener API.",
+        "Overlay Window that is always on top, even when switching between apps.",
+        "Simple and clean candlestick chart to visualize price action.",
+        "Allows users to input any Solana contract address to track different memecoins."
+      ],
+      "githubURL": "https://github.com/8liam/CandleView/",
+      "githubURLTitle": "View Source Code"
+    },
+    {
+      "id": 4,
+      "name": "OzBargain - Raycast Extension",
+      "logo": "/projects/ozbargain-raycast-icon.png",
+      "logoAlt": "OzBargain Raycast Logo",
+      "tagline": "Latest OzBargain deals powered by Raycast",
+      "description": "Raycast is a powerful launcher and productivity tool, with an api that allows developers to publish extensions onto their store platform. This allows anyone and everyone using Raycast to download whatever extensions will make them more productive. The OzBargain Deals Raycast Extension allows users to see and explore the latest deals posted on OzBargain through Raycast — eliminating the friction of checking the platform multiple times a day.",
+      "image": "/projects/ozbargain-raycast.webp",
+      "imageAlt": "OzBargain Raycast Demo",
+      "languages": ["TypeScript"],
+      "features": [
+        "Retrieves up-to-date info from RSS Feed of OzBargain platform.",
+        "Data parsed from RSS feed to display on details page."
+      ],
+      "githubURL": "https://github.com/raycast/extensions/tree/5e45313048426136f6aaab703b57a952117a0e06/extensions/ozbargain-deals/",
+      "githubURLTitle": "View Source Code",
+      "url": "https://www.raycast.com/55555/ozbargain-deals",
+      "urlTitle": "Install Extension"
+    }
+  ]
 }
