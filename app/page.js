@@ -9,8 +9,10 @@ import Projects from "./components/projects";
 import { ArrowDown } from "lucide-react";
 import { useState } from "react";
 import ScrollBounds from "./components/SmoothScroll";
+import { LoadingProvider, useLoading } from "./contexts/LoadingContext";
 
-export default function Home() {
+function HomeContent() {
+  const { isLoading } = useLoading();
   const [scrolled, setScrolled] = useState(false);
 
   const handleScroll = (scrollPosition) => {
@@ -19,7 +21,7 @@ export default function Home() {
   };
 
   return (
-    <ScrollBounds onScroll={handleScroll}>
+    <ScrollBounds onScroll={handleScroll} lockScroll={isLoading}>
       <div className={`z-50 grid grid-cols-2 w-screen px-4 py-2 fixed transition-all duration-0 ${scrolled ? 'bg-white/50 backdrop-blur-md border-b' : ''}`}>
         <div className="gap-2 flex font-medium text-sm lg:text-md">
           <span className="hover:tracking-wider duration-300">LIAM</span>
@@ -55,5 +57,13 @@ export default function Home() {
       <Projects />
       <Footer />
     </ScrollBounds>
+  );
+}
+
+export default function Home() {
+  return (
+    <LoadingProvider>
+      <HomeContent />
+    </LoadingProvider>
   );
 }

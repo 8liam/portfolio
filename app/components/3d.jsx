@@ -5,25 +5,30 @@ import { OrbitControls, PerspectiveCamera, AsciiRenderer } from "@react-three/dr
 import { Suspense, useEffect, useRef, useState } from 'react';
 import Grid from './3D/grid';
 import CanvasLoader from './CanvasLoader';
+import { useLoading } from '../contexts/LoadingContext';
 
 
 function MouseOrbitControls({ mouse }) {
     const controlsRef = useRef();
-    const { camera } = useThree();
-
-    // Base orbit angles (matching your original minAzimuthAngle/minPolarAngle area)
-    const baseAzimuth = 1.6;
-    const basePolar = 1.65;
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        if (controlsRef.current) {
-            controlsRef.current.autoRotate = false;
-        }
+        // Detect mobile device
+        setIsMobile('ontouchstart' in window || navigator.maxTouchPoints > 0);
     }, []);
 
     useFrame(() => {
-        if (controlsRef.current && mouse.current) {
-            // Map mouse position to orbit angles
+        if (!controlsRef.current) return;
+
+        if (isMobile) {
+            // Auto-rotate on mobile
+            controlsRef.current.autoRotate = true;
+            controlsRef.current.autoRotateSpeed = -0.2;
+        } else if (mouse.current) {
+            // Mouse control on desktop
+            controlsRef.current.autoRotate = false;
+            const baseAzimuth = 1.6;
+            const basePolar = 1.65;
             const maxOffset = 0.3;
 
             controlsRef.current.setAzimuthalAngle(baseAzimuth + mouse.current.x * maxOffset);
@@ -36,7 +41,7 @@ function MouseOrbitControls({ mouse }) {
             ref={controlsRef}
             enablePan={false}
             enableZoom={false}
-            enableRotate={false}
+            enableRotate={!isMobile}
             minPolarAngle={1.4}
             maxPolarAngle={1.9}
             minAzimuthAngle={1.3}
@@ -72,9 +77,9 @@ function SafeAsciiRenderer({ characters, fgColor, bgColor, resolution, onReady }
     }
 }
 export default function ThreeD() {
+    const { isLoading, setIsLoading } = useLoading();
     const [isCanvasReady, setIsCanvasReady] = useState(false);
     const [isAsciiReady, setIsAsciiReady] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
     const [textFaded, setTextFaded] = useState(false);
     const [bgFaded, setBgFaded] = useState(false);
     const mouse = useRef({ x: 0, y: 0 });

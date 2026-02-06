@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useRef } from 'react';
 
-export default function ScrollBounds({ children, onScroll }) {
+export default function ScrollBounds({ children, onScroll, lockScroll = false }) {
     const containerRef = useRef(null);
     const maxScrollRef = useRef(0);
 
@@ -34,6 +34,12 @@ export default function ScrollBounds({ children, onScroll }) {
         };
 
         const handleWheel = (e) => {
+            // Prevent all scrolling when locked
+            if (lockScroll) {
+                e.preventDefault();
+                return;
+            }
+
             const scrollTop = container.scrollTop;
             const delta = e.deltaY;
 
