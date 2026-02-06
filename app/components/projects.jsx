@@ -107,17 +107,6 @@ export default function Projects() {
                                     <div ref={leftRef} className="border-[#1C1C21] lg:border-r overflow-auto order-2 lg:order-1 flex flex-col">
                                         <div className="flex-1">
                                             <p className="p-4">{currentProject.description}</p>
-
-                                            {currentProject.features && currentProject.features.length > 0 && (
-                                                <div className="">
-                                                    <p className="text-xl font-normal p-4 border-[#1C1C21] border-t">Features</p>
-                                                    <div className="grid-cols-1 lg:grid-cols-2 grid border-[#1C1C21] border-b">
-                                                        {currentProject.features.map((feature, index) => (
-                                                            <div key={index} className={`p-4 border-[#1C1C21] border-t ${index % 2 == 0 ? 'border-r' : ''} ${currentProject.features.length % 2 !== 0 && index === currentProject.features.length - 2 ? 'border-b' : ''}`}>{feature}</div>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            )}
                                         </div>
 
                                         <div className={`border-[#1C1C21] text-center mt-auto ${(currentProject.url && currentProject.githubURL) ? 'grid grid-cols-1 lg:grid-cols-2' : 'block'}`}>
