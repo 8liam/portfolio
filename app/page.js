@@ -44,7 +44,7 @@ function HomeContent() {
         <span id="software-title" className="z-10 font-mono">[SOFTWARE ENGINEER]</span>
       </div>
       <div className="absolute inset-0 text-center flex flex-col items-center justify-end pb-24 h-[100vh] ">
-        <div className="z-10 bg-black/1 backdrop-blur-xs rounded-2xl px-6 py-1 text-center flex flex-col items-center justify-center">
+        <div className=" md:hidden z-10 bg-black/1 backdrop-blur-xs rounded-2xl px-6 py-1 text-center flex flex-col items-center justify-center">
           <a href="#about">
             <ArrowDown className="z-10" />
           </a>
