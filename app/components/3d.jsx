@@ -1,11 +1,49 @@
 "use client"
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls, PerspectiveCamera, AsciiRenderer } from "@react-three/drei"
 
 import { Suspense, useEffect, useRef, useState } from 'react';
 import Grid from './3D/grid';
 import CanvasLoader from './CanvasLoader';
 
+
+function MouseOrbitControls({ mouse }) {
+    const controlsRef = useRef();
+    const { camera } = useThree();
+
+    // Base orbit angles (matching your original minAzimuthAngle/minPolarAngle area)
+    const baseAzimuth = 1.6;
+    const basePolar = 1.65;
+
+    useEffect(() => {
+        if (controlsRef.current) {
+            controlsRef.current.autoRotate = false;
+        }
+    }, []);
+
+    useFrame(() => {
+        if (controlsRef.current && mouse.current) {
+            // Map mouse position to orbit angles
+            const maxOffset = 0.3;
+
+            controlsRef.current.setAzimuthalAngle(baseAzimuth + mouse.current.x * maxOffset);
+            controlsRef.current.setPolarAngle(basePolar + mouse.current.y * maxOffset);
+        }
+    });
+
+    return (
+        <OrbitControls
+            ref={controlsRef}
+            enablePan={false}
+            enableZoom={false}
+            enableRotate={false}
+            minPolarAngle={1.4}
+            maxPolarAngle={1.9}
+            minAzimuthAngle={1.3}
+            maxAzimuthAngle={1.9}
+        />
+    );
+}
 
 function SafeAsciiRenderer({ characters, fgColor, bgColor, resolution, onReady }) {
     const [mounted, setMounted] = useState(false);
@@ -37,6 +75,23 @@ export default function ThreeD() {
     const [isCanvasReady, setIsCanvasReady] = useState(false);
     const [isAsciiReady, setIsAsciiReady] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [textFaded, setTextFaded] = useState(false);
+    const [bgFaded, setBgFaded] = useState(false);
+    const mouse = useRef({ x: 0, y: 0 });
+    const autoRotateAngle = useRef(0);
+
+    useEffect(() => {
+        const handleMouseMove = (event) => {
+            // Normalize mouse position to [-1, 1] range
+            mouse.current = {
+                x: (event.clientX / window.innerWidth) * 2 - 1,
+                y: -(event.clientY / window.innerHeight) * 2 + 1
+            };
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
 
 
 
@@ -51,10 +106,26 @@ export default function ThreeD() {
 
     useEffect(() => {
         if (isAsciiReady) {
-            const timer = setTimeout(() => {
+            // First fade out the text
+            const textTimer = setTimeout(() => {
+                setTextFaded(true);
+            }, 100);
+
+            // Then show the 3D model
+            const modelTimer = setTimeout(() => {
                 setIsLoading(false);
-            }, 0); // Small delay for smooth transition
-            return () => clearTimeout(timer);
+            }, 500);
+
+            // Finally fade out the background after model is visible
+            const bgTimer = setTimeout(() => {
+                setBgFaded(true);
+            }, 800);
+
+            return () => {
+                clearTimeout(textTimer);
+                clearTimeout(modelTimer);
+                clearTimeout(bgTimer);
+            };
         }
     }, [isAsciiReady]);
 
@@ -62,21 +133,19 @@ export default function ThreeD() {
         <div className="w-screen h-screen relative">
 
             {/* Loading Overlay */}
-            {isLoading && (
-                <>
-                    {/* Centered Spinner */}
-                    <div className={`absolute inset-0 bg-white z-10 flex items-center justify-center transition-opacity duration-200 ${isAsciiReady ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                        }`}>
+            <>
+                {/* Background - fades last after model is visible */}
+                <div className={`absolute inset-0 bg-white z-10 flex items-center justify-center transition-opacity duration-700 ease-out ${bgFaded ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                    }`}>
 
-                    </div>
+                </div>
 
-                    {/* Bottom Left Full Width Text */}
-                    <div className={`absolute bottom-0 left-0 right-0 z-10 p-8 transition-opacity duration-200 ${isAsciiReady ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                        }`}>
-                        <p className="text-black uppercase font-bold lg:text-8xl text-4xl text-left">Entering Experience</p>
-                    </div>
-                </>
-            )}
+                {/* Text - fades first */}
+                <div className={`absolute bottom-0 left-0 right-0 z-10 p-8 transition-opacity duration-500 ease-out ${textFaded ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                    }`}>
+                    <p className="text-black uppercase font-bold lg:text-8xl text-4xl text-left">Entering Experience</p>
+                </div>
+            </>
 
             <Canvas className="w-full h-full absolute inset-0 select-none">
                 <Suspense fallback={<CanvasLoader />}>
@@ -109,17 +178,7 @@ export default function ThreeD() {
                             position={[18, -11, 3]}
                         />
                     </group>
-                    <OrbitControls
-                        enablePan={true}
-                        enableZoom={false}
-                        enableRotate={true}
-                        autoRotate={true}
-                        autoRotateSpeed={-0.2}
-                        minPolarAngle={1.4}
-                        maxPolarAngle={1.9}
-                        minAzimuthAngle={1.3}
-                        maxAzimuthAngle={1.9}
-                    />
+                    <MouseOrbitControls mouse={mouse} />
                     <ambientLight intensity={2} />
 
                     {/* 6 Axes */}
