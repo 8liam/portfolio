@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import ThreeD from "./components/3d";
 import Skills from "./components/skills";
 import Journey from "./components/journey";
@@ -22,26 +22,41 @@ function HomeContent() {
 
   return (
     <ScrollBounds onScroll={handleScroll} lockScroll={isLoading}>
-      <div className={`z-50 grid grid-cols-2 w-screen px-4 py-2 fixed transition-all duration-0 ${scrolled ? 'bg-white/50 backdrop-blur-md border-b' : ''}`}>
+      <div
+        className={`z-50 grid grid-cols-2 w-screen px-4 py-2 fixed transition-all duration-0 ${scrolled ? "bg-white/50 backdrop-blur-md border-b" : ""}`}
+      >
         <div className="gap-2 flex font-medium text-sm lg:text-md">
           <span className="hover:tracking-wider duration-300">LIAM</span>
           <span className="pointer-events-none">/</span>
-          <Link className="hover:tracking-wider duration-300" href={"#about"}>ABOUT</Link>
+          <Link className="hover:tracking-wider duration-300" href={"#about"}>
+            ABOUT
+          </Link>
           <span className="pointer-events-none">/</span>
-          <Link className="hover:tracking-wider duration-300" href={"#journey"}>JOURNEY</Link>
+          <Link className="hover:tracking-wider duration-300" href={"#journey"}>
+            JOURNEY
+          </Link>
           <span className="pointer-events-none">/</span>
-          <Link className="hover:tracking-wider duration-300" href={"#projects"}>PROJECTS</Link>
+          <Link
+            className="hover:tracking-wider duration-300"
+            href={"#projects"}
+          >
+            PROJECTS
+          </Link>
         </div>
         <div className="text-right text-sm lg:text-md">
-          <Link className="hover:tracking-wider duration-300" href={"#contact"}>CONTACT</Link>
+          <Link className="hover:tracking-wider duration-300" href={"#contact"}>
+            CONTACT
+          </Link>
         </div>
       </div>
 
       <div className="h-[40vh] absolute inset-0 text-center flex flex-col justify-center items-center">
-        <h1 className="md:text-5xl text-3xl font-bold z-10 text-black uppercase tracking-tight">
+        <h1 className="md:text-7xl text-6xl font-bold font-sans z-10 text-black uppercase tracking-tight">
           Liam Grant
         </h1>
-        <span id="software-title" className="z-10 font-mono">[SOFTWARE ENGINEER]</span>
+        <span id="software-title" className="z-10 font-pixel-circle font-bold">
+          [SOFTWARE ENGINEER - GOLD COAST, AUSTRALIA]
+        </span>
       </div>
       <div className="absolute inset-0 text-center flex flex-col items-center justify-end pb-24 h-[100vh] ">
         <div className=" md:hidden z-10 bg-black/1 backdrop-blur-xs rounded-2xl px-6 py-1 text-center flex flex-col items-center justify-center">

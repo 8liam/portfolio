@@ -1,25 +1,36 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  GeistPixelSquare,
+  GeistPixelGrid,
+  GeistPixelCircle,
+  GeistPixelTriangle,
+  GeistPixelLine,
+} from "geist/font/pixel";
+
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: {
     default: "Liam Grant | Software Engineer", // Default for pages without specific title
   },
-  description: "I'm a software engineer based in the Gold Coast, Queensland, building modern web applications and solutions.",
-  referrer: 'strict-origin-when-cross-origin',
-  keywords: ["Liam Grant", "Software Engineer", "Gold Coast", "Web Developer", "React", "Next.js", "Fullstack", "Queensland", "Gold Coast Web Dev"],
+  description:
+    "I'm a software engineer based in the Gold Coast, Queensland, building modern web applications and solutions.",
+  referrer: "strict-origin-when-cross-origin",
+  keywords: [
+    "Liam Grant",
+    "Software Engineer",
+    "Gold Coast",
+    "Web Developer",
+    "React",
+    "Next.js",
+    "Fullstack",
+    "Queensland",
+    "Gold Coast Web Dev",
+  ],
   authors: [{ name: "Liam Grant" }],
   creator: "Liam Grant",
   publisher: "Liam Grant",
@@ -31,14 +42,15 @@ export const metadata = {
       index: true,
       follow: true,
       noimageindex: false,
-      'max-snippet': -1, // No character limit for snippets
+      "max-snippet": -1, // No character limit for snippets
     },
   },
 
   // Open Graph metadata for social sharing
   openGraph: {
     title: "Liam Grant | Software Engineer",
-    description: "I'm a software engineer based in the Gold Coast, Queensland, building modern web applications and solutions.",
+    description:
+      "I'm a software engineer based in the Gold Coast, Queensland, building modern web applications and solutions.",
     url: "https://liamgrant.com",
     siteName: "Liam Grant's Portfolio",
     images: [
@@ -53,14 +65,13 @@ export const metadata = {
     locale: "en_AU", // Or 'en_US' etc.
     type: "website",
   },
-
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
+        className={`${GeistSans.variable} ${GeistMono.variable} ${GeistPixelSquare.variable} ${GeistPixelCircle.variable} ${GeistPixelGrid.variable} ${GeistPixelLine.variable} ${GeistPixelSquare.variable} ${GeistPixelTriangle.variable} antialiased font-sans`}
       >
         <SpeedInsights />
         <Analytics />
