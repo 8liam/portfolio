@@ -69,7 +69,10 @@ function HomeContent() {
       <Skills />
       <Technologies />
       <Journey />
+
+      {/* Projects Section */}
       <Projects />
+
       <Footer />
     </ScrollBounds>
   );
