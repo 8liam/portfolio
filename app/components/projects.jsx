@@ -135,7 +135,7 @@ export default function Projects() {
                   <Link
                     href={project.githubURL}
                     target="_blank"
-                    className="p-4 border-[#1C1C21] flex flex-row gap-2 font-pixel-circle font-semibold justify-center items-center text-black"
+                    className="p-4 border-t lg:border-t-0 border-[#1C1C21] flex flex-row gap-2 font-pixel-circle font-semibold justify-center items-center text-black"
                   >
                     {project.githubURLTitle}
                     <ArrowUpRight width={20} height={20} />
