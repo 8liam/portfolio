@@ -49,9 +49,8 @@ function HomeContent() {
           </Link>
         </div>
       </div>
-
       <div className="h-[40vh] absolute inset-0 text-center flex flex-col justify-center items-center">
-        <h1 className="md:text-7xl text-6xl font-bold font-sans z-10 text-black uppercase tracking-tight">
+        <h1 className="md:text-7xl text-5xl font-bold font-sans z-10 text-black uppercase tracking-tight">
           Liam Grant
         </h1>
         <span id="software-title" className="z-10 font-pixel-circle font-bold">
@@ -69,10 +68,8 @@ function HomeContent() {
       <Skills />
       <Technologies />
       <Journey />
-
       {/* Projects Section */}
       <Projects />
-
       <Footer />
     </ScrollBounds>
   );
