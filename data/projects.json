@@ -10,7 +10,7 @@
       "description": "A playground for generating, previewing, and sharing UI components built with AI. Built on Next.js App Router with TypeScript and Tailwind CSS, it streams AI-generated snippets into a live, sandboxed preview - allowing users to save and share to anyone publicly.",
       "image": "/projects/gaea.webp",
       "imageAlt": "GAEA Home Page",
-      "languages": ["Next.js", "Tailwind CSS", "OpenRouter"],
+      "languages": ["Next.js", "Convex", "Tailwind CSS", "OpenRouter"],
       "githubURL": "",
       "githubURLTitle": "View Source Code",
       "url": "https://v2-gaea.vercel.app/",

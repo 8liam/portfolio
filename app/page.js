@@ -10,6 +10,7 @@ import { ArrowDown } from "lucide-react";
 import { useState } from "react";
 import ScrollBounds from "./components/SmoothScroll";
 import { LoadingProvider, useLoading } from "./contexts/LoadingContext";
+import Contributions from "./components/contributions";
 
 function HomeContent() {
   const { isLoading } = useLoading();
