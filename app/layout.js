@@ -71,7 +71,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} ${GeistPixelSquare.variable} ${GeistPixelCircle.variable} ${GeistPixelGrid.variable} ${GeistPixelLine.variable} ${GeistPixelSquare.variable} ${GeistPixelTriangle.variable} antialiased font-sans`}
+        className={`${GeistSans.variable} ${GeistMono.variable} ${GeistPixelSquare.variable} ${GeistPixelCircle.variable} ${GeistPixelGrid.variable} ${GeistPixelLine.variable} ${GeistPixelTriangle.variable} antialiased font-sans`}
       >
         <SpeedInsights />
         <Analytics />

@@ -1,53 +1,34 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { gsap } from 'gsap';
 
 export default function StaggeredText({ children, className = "" }) {
-    const textRef = useRef(null);
+    const ref = useRef(null);
 
     useEffect(() => {
-        if (!textRef.current) return;
-
-        const animatedText = textRef.current;
-        const originalText = animatedText.textContent;
-
-        // Clear and split text
-        animatedText.innerHTML = '';
-        originalText.split('').forEach(char => {
-            const span = document.createElement('span');
-            span.textContent = char;
-            span.style.opacity = '0';
-            span.style.display = 'inline-block';
-            animatedText.appendChild(span);
-        });
-
-        const spans = Array.from(animatedText.children);
-
-        // Simple intersection observer approach
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    gsap.to(spans, {
-                        opacity: 1,
-                        duration: 0.6,
-                        stagger: 0.08,
-                        ease: "power2.out"
-                    });
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        observer.observe(animatedText);
-
-        return () => {
-            observer.disconnect();
-        };
-    }, [children]);
+        if (!ref.current) return;
+        const spans = Array.from(ref.current.children);
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (!entry.isIntersecting) return;
+                spans.forEach((span, i) => {
+                    span.style.transitionDelay = `${i * 0.08}s`;
+                    span.style.opacity = "1";
+                });
+                observer.disconnect();
+            },
+            { threshold: 0.5 }
+        );
+        observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, []);
 
     return (
-        <span ref={textRef} className={className}>
-            {children}
+        <span ref={ref} className={className}>
+            {String(children).split("").map((char, i) => (
+                <span key={i} style={{ opacity: 0, display: "inline-block", transition: "opacity 0.6s ease" }}>
+                    {char === " " ? " " : char}
+                </span>
+            ))}
         </span>
     );
-} 
+}

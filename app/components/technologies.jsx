@@ -1,13 +1,13 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import languagesData from "../../data/languages.json"; // Adjust path as needed
 import StaggeredText from "./StaggeredText";
 
 export default function Technologies() {
   const languages = languagesData.languages;
   // Keeping scroll speed fixed is often fine for a consistent set of items.
-  const [scrollSpeed, setScrollSpeed] = useState(25); // Default scroll speed in seconds
+  const scrollSpeed = 25;
   const scrollerRef = useRef(null);
   const timeoutRef = useRef(null);
 

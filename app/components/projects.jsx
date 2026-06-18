@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import projectData from "../../data/projects.json";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -9,27 +9,7 @@ import StaggeredText from "./StaggeredText";
 // Alternating - Side-by-side alternating layout
 
 export default function Projects() {
-  const [preloadedImages, setPreloadedImages] = useState({});
   const [hoveredImage, setHoveredImage] = useState(null);
-
-  useEffect(() => {
-    const preloadImages = async () => {
-      const imageMap = {};
-      await Promise.all(
-        projectData.projects.map(async (project) => {
-          const img = new window.Image();
-          img.src = project.image;
-          await new Promise((resolve) => {
-            img.onload = resolve;
-            img.onerror = resolve;
-          });
-          imageMap[project.id] = true;
-        })
-      );
-      setPreloadedImages(imageMap);
-    };
-    preloadImages();
-  }, []);
 
   return (
     <section className="border-[#1C1C21] border-b">
@@ -61,9 +41,6 @@ export default function Projects() {
                   }`}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                {!preloadedImages[project.id] && (
-                  <div className="absolute inset-0 bg-white" />
-                )}
               </div>
             </div>
 

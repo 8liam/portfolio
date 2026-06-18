@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Contributions from "./contributions";
 
-export default function Skills(projects) {
+export default function Skills() {
   const [showTooltip, setShowTooltip] = useState(false);
 
   const copyEmail = async () => {

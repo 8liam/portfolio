@@ -16,12 +16,10 @@
     "@vercel/speed-insights": "^1.2.0",
     "geist": "^1.7.0",
     "gsap": "^3.13.0",
-    "leva": "^0.10.0",
     "lucide-react": "^0.525.0",
     "next": "^16.1.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "react-responsive": "^10.0.1",
     "three": "^0.177.0"
   },
   "devDependencies": {
