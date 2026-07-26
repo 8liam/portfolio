@@ -26,37 +26,41 @@ export default function Projects() {
             }`}
           >
             {/* Image Side */}
-            <div
-              className="relative aspect-video lg:aspect-auto lg:h-[400px] p-4 border-b border-[#1C1C21] lg:border-b-0"
-              onMouseEnter={() => setHoveredImage(project.id)}
-              onMouseLeave={() => setHoveredImage(null)}
-            >
-              <div className="relative w-full h-full overflow-hidden rounded-sm bg-white">
-                <Image
-                  src={project.image}
-                  alt={project.imageAlt}
-                  fill
-                  className={`object-cover transition-transform duration-500 ${
-                    hoveredImage === project.id ? "scale-105" : ""
-                  }`}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+            {project.image && (
+              <div
+                className="relative aspect-video lg:aspect-auto lg:h-[400px] p-4 border-b border-[#1C1C21] lg:border-b-0"
+                onMouseEnter={() => setHoveredImage(project.id)}
+                onMouseLeave={() => setHoveredImage(null)}
+              >
+                <div className="relative w-full h-full overflow-hidden rounded-sm bg-white">
+                  <Image
+                    src={project.image}
+                    alt={project.imageAlt}
+                    fill
+                    className={`object-cover transition-transform duration-500 ${
+                      hoveredImage === project.id ? "scale-105" : ""
+                    }`}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Content Side */}
             <div className="flex flex-col lg:border-l border-[#1C1C21]">
               {/* Logo and Name - same row */}
               <div className="grid grid-cols-[auto_1fr] border-b border-[#1C1C21]">
-                <div className="border-r border-[#1C1C21] p-4">
-                  <Image
-                    src={project.logo}
-                    alt={project.logoAlt}
-                    width={60}
-                    height={60}
-                    className="rounded-sm"
-                  />
-                </div>
+                {project.logo && (
+                  <div className="border-r border-[#1C1C21] p-4">
+                    <Image
+                      src={project.logo}
+                      alt={project.logoAlt}
+                      width={60}
+                      height={60}
+                      className="rounded-sm"
+                    />
+                  </div>
+                )}
                 <div className="p-4">
                   <h3 className="font-pixel-circle font-semibold text-2xl uppercase text-black">
                     {project.name}
