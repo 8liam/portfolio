@@ -23,7 +23,8 @@
 }
 
 body {
-  background: var(--background);
+  /* home is the terminal; /archive paints its own light background */
+  background: var(--cli-bg);
   color: var(--foreground);
   font-family: var(--font-sans);
 }
@@ -48,4 +49,95 @@ body {
 
 .scroller-inner.paused {
   animation-play-state: paused;
+}
+
+
+/* ── CLI portfolio ─────────────────────────────────────────── */
+
+/* palette lives on :root so body can use the background too */
+:root {
+  --cli-bg: #141312;
+  --cli-fg: #e8e4dc;
+  --cli-dim: #8a8580;
+  --cli-acc: #d97757;
+  --cli-alt: #7aa2d9;
+  --cli-line: #2e2b28;
+}
+
+.cli-root {
+  min-height: 100vh;
+  background: var(--cli-bg);
+  color: var(--cli-fg);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 14px;
+  line-height: 1.9;
+  /* pre-wrap so long urls fold instead of widening the page */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.cli-wrap {
+  white-space: pre-wrap;
+  padding-left: 1.5rem;
+  text-indent: -1.5rem;
+}
+.cli-block {
+  margin-bottom: 2.25rem;
+}
+.cli-dim {
+  color: var(--cli-dim);
+}
+.cli-acc {
+  color: var(--cli-acc);
+}
+.cli-blu {
+  color: var(--cli-alt);
+}
+.cli-b {
+  font-weight: 600;
+}
+.cli-root a {
+  color: var(--cli-alt);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cli-root a:hover {
+  color: var(--cli-acc);
+}
+
+.cli-col {
+  padding: 4.5rem 1.5rem 5rem;
+}
+.cli-col > * {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* block glyphs need to touch, so no leading, and the art must never fold */
+.cli-banner {
+  white-space: pre;
+  overflow-wrap: normal;
+  line-height: 1;
+  letter-spacing: -0.04em; /* geist mono's block glyph is narrower than its advance */
+}
+.cli-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--cli-dim);
+  margin-bottom: 0.9rem;
+}
+.cli-rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--cli-line);
+}
+
+@media (max-width: 720px) {
+  .cli-root {
+    font-size: 12px;
+  }
+  .cli-col {
+    padding: 2.5rem 1rem 3rem;
+  }
 }
