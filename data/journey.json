@@ -11,7 +11,8 @@
             "description": "",
             "current": true,
             "points": [
-                "Joined Westpac Bank as an Engineer in the Next Wave Program, and currently work on building customer-facing mortgage technologies."
+                "Build the bank's mortgage calculators. Migrating them from Webpack to Vite.",
+                "Moving the core financial logic into a TypeScript library other teams build on."
             ]
         },
         {
@@ -24,9 +25,7 @@
             "description": "",
             "current": false,
             "points": [
-                "Built and maintained fast, scalable Shopify stores using Liquid and Shopify APIs, including custom app development with Remix and Prisma. Also designed and deployed tailored WordPress sites aligned with brand identities and business goals.",
-                "Implemented technical SEO improvements to lift organic rankings and site health, configured accurate Google Analytics tracking, and developed a real-time client performance dashboard to enable data-driven optimizations.",
-                "Fostered strong client relationships by running weekly meetings to report progress, gather feedback, and align development work with business priorities, while also scoping and estimating new feature requests."
+                "Built Shopify storefronts for multi-million dollar clients."
             ]
         },
         {
@@ -38,12 +37,9 @@
             "logoAlt": "QUT Logo",
             "description": "",
             "current": false,
+            "education": true,
             "points": [
-                "Major in Computer Science",
-                "Minor in IoT and Web Technologies",
-                "Designed and built scalable full-stack web applications with React, implementing AWS EC2 load balancing to handle high traffic.",
-                "Collaborated with a team to deliver a production-ready full-stack application for a real-world client as part of a Capstone Project.",
-                "Engineered complete enterprise systems in C, focusing on performance and reliability."
+                "Major in Computer Science"
             ]
         }
     ]
