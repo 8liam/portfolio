@@ -3,54 +3,36 @@
   "projects": [
     {
       "id": 1,
-      "name": "PANGAEA",
-      "logo": "/projects/gaea-icon.png",
-      "logoAlt": "GAEA Logo",
-      "tagline": "Generative AI Code Generation",
-      "description": "A playground for generating, previewing, and sharing UI components built with AI. Built on Next.js App Router with TypeScript and Tailwind CSS, it streams AI-generated snippets into a live, sandboxed preview - allowing users to save and share to anyone publicly.",
-      "image": "/projects/gaea.webp",
-      "imageAlt": "GAEA Home Page",
-      "languages": ["Next.js", "Convex", "Tailwind CSS", "OpenRouter"],
-      "githubURL": "",
+      "name": "spire",
+      "tagline": "Self-hosted financial dashboard",
+      "description": "Track accounts, income and long-term projections on your own infrastructure. Handles savings, investments, loans and crypto — live prices, price history and real-time portfolio value — plus configurable pay cycles, split allocations and growth projections. Ships as a multi-arch Docker image, so your data never leaves your server.",
+      "languages": ["Next.js", "TypeScript", "PostgreSQL", "Drizzle ORM", "Docker"],
+      "githubURL": "https://github.com/unsurf/spire",
       "githubURLTitle": "View Source Code",
-      "url": "https://v2-gaea.vercel.app/",
-      "urlTitle": "Live Site"
+      "url": "",
+      "urlTitle": ""
     },
     {
       "id": 2,
-      "name": "OurMovieList",
-      "logo": "/projects/ourmovielist-icon.png",
-      "logoAlt": "OurMovieList Logo",
-      "tagline": "Collaborative Movie Discovery & Watchlists",
-      "description": "OurMovieList is a dynamic and interactive web application designed to enhance how friends and groups discover, manage, and share their favorite movies. This platform offers a seamless experience for tracking trending films, creating and managing private groups, and building shared watchlists, fostering a collaborative movie-watching journey.",
-      "image": "/projects/ourmovielist.webp",
-      "imageAlt": "OurMovieList Home Page",
-      "languages": [
-        "Next.js",
-        "Supabase",
-        "PostgreSQL",
-        "Prisma ORM",
-        "Tailwind CSS"
-      ],
-      "githubURL": "https://github.com/8liam/ourmovielist",
+      "name": "cs-movement",
+      "tagline": "Source-engine movement physics, standalone",
+      "description": "Counter-Strike movement as a library: bhop, surf, air-strafing, ladders, ducking and stamina, with plane-based brush collision. Faithful to CS:GO's accelerate and friction cvars, the air-speed cap and the takeoff clamp. Renderer-agnostic with zero runtime dependencies — you bring the geometry and the draw loop. The core has no DOM dependency, so it runs headless under Node for replay validation and deterministic lockstep.",
+      "languages": ["TypeScript"],
+      "githubURL": "https://github.com/unsurf/cs-movement",
       "githubURLTitle": "View Source Code",
-      "url": "https://ourmovielist.vercel.app",
-      "urlTitle": "Live Site"
+      "url": "https://hns.unsurf.sh",
+      "urlTitle": "Live Demo"
     },
     {
       "id": 3,
-      "name": "OzBargain - Extension",
-      "logo": "/projects/ozbargain-raycast-icon.png",
-      "logoAlt": "OzBargain Raycast Logo",
-      "tagline": "Latest OzBargain deals powered by Raycast",
-      "description": "Raycast is a powerful launcher and productivity tool, with an api that allows developers to publish extensions onto their store platform. This allows anyone and everyone using Raycast to download whatever extensions will make them more productive. The OzBargain Deals Raycast Extension allows users to see and explore the latest deals posted on OzBargain through Raycast — eliminating the friction of checking the platform multiple times a day.",
-      "image": "/projects/ozbargain-raycast.webp",
-      "imageAlt": "OzBargain Raycast Demo",
-      "languages": ["TypeScript"],
-      "githubURL": "https://github.com/raycast/extensions/tree/5e45313048426136f6aaab703b57a952117a0e06/extensions/ozbargain-deals/",
+      "name": "dotship",
+      "tagline": "CLI dotfile manager",
+      "description": "Browse any public GitHub repository, pick the config files you need, and save them exactly where they belong on your machine. Repo authors can drop in a .dotship.yml manifest to map every file to its destination, so a whole dotfiles setup installs in one go.",
+      "languages": ["TypeScript", "React", "Ink", "Node.js"],
+      "githubURL": "https://github.com/8liam/dotship",
       "githubURLTitle": "View Source Code",
-      "url": "https://www.raycast.com/55555/ozbargain-deals",
-      "urlTitle": "Install Extension"
+      "url": "https://www.npmjs.com/package/dotship",
+      "urlTitle": "Install"
     }
   ]
 }
