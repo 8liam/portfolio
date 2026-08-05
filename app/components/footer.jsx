@@ -12,7 +12,7 @@ export default function Footer() {
           Github
         </Link>
         <Link
-          href="https://www.linkedin.com/in/liamgrant1903/"
+          href="https://www.linkedin.com/in/liamgrantdev/"
           className="font-normal"
           target="_blank"
         >
