@@ -158,7 +158,7 @@ const stack = () =>
 const contact = () => [
   L("  email      liamgrantdev@gmail.com"),
   L("  github     https://github.com/8liam"),
-  L("  linkedin   https://www.linkedin.com/in/liamgrant1903/"),
+  L("  linkedin   https://linkedin.com/in/liamgrantdev"),
 ];
 
 export const sections = () => [
