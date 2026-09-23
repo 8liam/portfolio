@@ -6,12 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@react-three/drei": "^10.2.0",
     "@react-three/fiber": "^9.1.2",
-    "@types/react": "^19.2.7",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "geist": "^1.7.0",
@@ -25,6 +24,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/react": "^19.2.7",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
     "tailwindcss": "^4"

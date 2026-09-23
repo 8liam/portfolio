@@ -1,21 +1,19 @@
 import {
-  GeistPixelSquare,
-  GeistPixelGrid,
-  GeistPixelCircle,
-  GeistPixelTriangle,
-  GeistPixelLine,
-} from "geist/font/pixel";
-
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+  GeistSans,
+  GeistMono,
+} from "geist/font";
 
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+export const viewport = {
+  themeColor: "#141312",
+};
+
 export const metadata = {
   title: {
-    default: "Liam Grant | Software Engineer", // Default for pages without specific title
+    default: "Liam Grant | Software Engineer",
   },
   description:
     "I'm a software engineer based in the Gold Coast, Queensland, building modern web applications and solutions.",
@@ -34,6 +32,7 @@ export const metadata = {
   authors: [{ name: "Liam Grant" }],
   creator: "Liam Grant",
   publisher: "Liam Grant",
+  metadataBase: new URL("https://liamgrant.com"),
 
   robots: {
     index: true,
@@ -42,11 +41,19 @@ export const metadata = {
       index: true,
       follow: true,
       noimageindex: false,
-      "max-snippet": -1, // No character limit for snippets
+      "max-snippet": -1,
     },
   },
 
-  // Open Graph metadata for social sharing
+  twitter: {
+    card: "summary_large_image",
+    title: "Liam Grant | Software Engineer",
+    description:
+      "I'm a software engineer based in the Gold Coast, Queensland, building modern web applications and solutions.",
+    images: ["https://liamgrant.com/og-image.png"],
+    creator: "@liamgrantdev",
+  },
+
   openGraph: {
     title: "Liam Grant | Software Engineer",
     description:
@@ -55,14 +62,13 @@ export const metadata = {
     siteName: "Liam Grant's Portfolio",
     images: [
       {
-        url: "https://liamgrant.com/og-image.png", // Make sure this path is correct and the image exists
+        url: "https://liamgrant.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Liam Grant's Portfolio",
       },
-      // You can add more image objects here if needed
     ],
-    locale: "en_AU", // Or 'en_US' etc.
+    locale: "en_AU",
     type: "website",
   },
 };
@@ -71,7 +77,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} ${GeistPixelSquare.variable} ${GeistPixelCircle.variable} ${GeistPixelGrid.variable} ${GeistPixelLine.variable} ${GeistPixelTriangle.variable} antialiased font-sans`}
+        className={`${GeistSans.variable} ${GeistMono.variable} antialiased font-sans`}
       >
         <SpeedInsights />
         <Analytics />

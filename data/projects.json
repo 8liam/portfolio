@@ -8,9 +8,7 @@
       "description": "Track accounts, income and long-term projections on your own infrastructure. Handles savings, investments, loans and crypto — live prices, price history and real-time portfolio value — plus configurable pay cycles, split allocations and growth projections. Ships as a multi-arch Docker image, so your data never leaves your server.",
       "languages": ["Next.js", "TypeScript", "PostgreSQL", "Drizzle ORM", "Docker"],
       "githubURL": "https://github.com/unsurf/spire",
-      "githubURLTitle": "View Source Code",
-      "url": "",
-      "urlTitle": ""
+      "githubURLTitle": "View Source Code"
     },
     {
       "id": 2,

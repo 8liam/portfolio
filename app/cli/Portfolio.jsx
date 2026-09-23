@@ -40,7 +40,7 @@ export default function Portfolio() {
           {"makes computers do things · gold coast, australia"}
         </div>
         {sections().map((s) => (
-          <section key={s.id} id={s.id} className="cli-block">
+          <section key={s.id} id={s.id} className="cli-block" aria-label={s.label}>
             <h2 className="cli-rule">
               <span className="cli-acc">✻</span>
               {s.label}

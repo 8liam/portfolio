@@ -28,7 +28,6 @@ export default function Footer() {
         <Link
           href="mailto:liamgrantdev@gmail.com"
           className="font-normal"
-          target="_blank"
         >
           liamgrantdev@gmail.com
         </Link>
