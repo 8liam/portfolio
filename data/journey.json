@@ -11,8 +11,8 @@
             "description": "",
             "current": true,
             "points": [
-                "Build the bank's mortgage calculators. Migrating them from Webpack to Vite.",
-                "Moving the core financial logic into a TypeScript library other teams build on."
+                "Migrated mortgage calculator microfrontends from Webpack to Vite.",
+                "Extracted core business mortgage calculation logic into a TypeScript library consumed by other projects."
             ]
         },
         {
