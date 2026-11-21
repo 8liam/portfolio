@@ -122,7 +122,7 @@ const about = () => [
   L("Liam Grant", "cli-b"),
   L("Gold Coast, QLD, Australia"),
   GAP,
-  P("full stack engineer. big ai guy"),
+  P("agent orchestrator. full-stack engineer."),
 ];
 
 const entries = (education) =>

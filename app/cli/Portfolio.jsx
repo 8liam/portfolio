@@ -30,8 +30,9 @@ function Line({ line }) {
 export default function Portfolio() {
   return (
     <div className="cli-root">
-      <div className="cli-col">
-        <div className="cli-banner">
+      <main className="cli-col">
+        <h1 className="sr-only">Liam Grant — Software Engineer</h1>
+        <div className="cli-banner" aria-hidden="true">
           {BANNER.map((line, i) => (
             <Line key={i} line={line} />
           ))}
@@ -50,7 +51,7 @@ export default function Portfolio() {
             ))}
           </section>
         ))}
-      </div>
+      </main>
     </div>
   );
 }

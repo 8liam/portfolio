@@ -3,19 +3,27 @@
   "projects": [
     {
       "id": 1,
-      "name": "spire",
-      "tagline": "Self-hosted financial dashboard",
-      "description": "Track accounts, income and long-term projections on your own infrastructure. Handles savings, investments, loans and crypto — live prices, price history and real-time portfolio value — plus configurable pay cycles, split allocations and growth projections. Ships as a multi-arch Docker image, so your data never leaves your server.",
-      "languages": ["Next.js", "TypeScript", "PostgreSQL", "Drizzle ORM", "Docker"],
-      "githubURL": "https://github.com/unsurf/spire",
-      "githubURLTitle": "View Source Code"
+      "name": "openinventory",
+      "tagline": "Self-hosted CS2 inventory tracker",
+      "description": "Track every CS2 skin, sticker and storage unit you own, with live value history. Self-hosted on a single SQLite file, with sign-in through the Steam mobile app so your data stays on your own server.",
+      "languages": [
+        "TypeScript",
+        "SQLite",
+        "Docker"
+      ],
+      "githubURL": "https://github.com/8liam/OpenInventory",
+      "githubURLTitle": "View Source Code",
+      "url": "https://openinventory.unsurf.sh",
+      "urlTitle": "Live Demo"
     },
     {
       "id": 2,
       "name": "cs-movement",
       "tagline": "Source-engine movement physics, standalone",
       "description": "Counter-Strike movement as a library: bhop, surf, air-strafing, ladders, ducking and stamina, with plane-based brush collision. Faithful to CS:GO's accelerate and friction cvars, the air-speed cap and the takeoff clamp. Renderer-agnostic with zero runtime dependencies — you bring the geometry and the draw loop. The core has no DOM dependency, so it runs headless under Node for replay validation and deterministic lockstep.",
-      "languages": ["TypeScript"],
+      "languages": [
+        "TypeScript"
+      ],
       "githubURL": "https://github.com/unsurf/cs-movement",
       "githubURLTitle": "View Source Code",
       "url": "https://hns.unsurf.sh",
@@ -26,7 +34,12 @@
       "name": "dotship",
       "tagline": "CLI dotfile manager",
       "description": "Browse any public GitHub repository, pick the config files you need, and save them exactly where they belong on your machine. Repo authors can drop in a .dotship.yml manifest to map every file to its destination, so a whole dotfiles setup installs in one go.",
-      "languages": ["TypeScript", "React", "Ink", "Node.js"],
+      "languages": [
+        "TypeScript",
+        "React",
+        "Ink",
+        "Node.js"
+      ],
       "githubURL": "https://github.com/8liam/dotship",
       "githubURLTitle": "View Source Code",
       "url": "https://www.npmjs.com/package/dotship",

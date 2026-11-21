@@ -16,9 +16,9 @@ export default function NotFound() {
           textAlign: "center",
         }}
       >
-        <div style={{ fontSize: "3rem", fontWeight: 600, marginBottom: "1rem" }}>
+        <h1 style={{ fontSize: "3rem", fontWeight: 600, marginBottom: "1rem" }}>
           404
-        </div>
+        </h1>
         <div className="cli-dim" style={{ marginBottom: "2rem" }}>
           this page could not be found.
         </div>
