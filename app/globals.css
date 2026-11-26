@@ -24,7 +24,7 @@
 
 body {
   /* home is the terminal; /archive paints its own light background */
-  background: var(--cli-bg);
+  background: var(--home-ground);
   color: var(--foreground);
   font-family: var(--font-sans);
 }
@@ -147,3 +147,6 @@ body {
 :root {
   --home-ground: #0d0d0d;
 }
+
+/* desktop: the whole home page fits one screen, no scrolling */
+@custom-variant desktop-fit (@media (min-width: 761px) and (min-height: 520px));

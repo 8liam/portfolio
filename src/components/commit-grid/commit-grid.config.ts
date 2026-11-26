@@ -23,7 +23,7 @@ export const COMMIT_GRID_CONFIG = {
     `Liam Grant's GitHub contribution graph for the last three months: ${total.toLocaleString("en-AU")} contributions`,
   className: {
     container:
-      "relative w-full overflow-hidden bg-[var(--home-ground)] aspect-[2/1] max-[699px]:aspect-[1/2] [@media(min-width:761px)_and_(min-height:520px)]:aspect-auto [@media(min-width:761px)_and_(min-height:520px)]:h-full",
+      "relative w-full overflow-hidden bg-[var(--home-ground)] aspect-[2/1] max-[699px]:aspect-[1/2] desktop-fit:aspect-auto desktop-fit:h-full",
     canvas: "absolute inset-0 block h-full w-full",
   },
 } as const;
