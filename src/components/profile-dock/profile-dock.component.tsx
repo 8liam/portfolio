@@ -22,6 +22,8 @@ export function ProfileDock() {
         <a
           key={link.id}
           href={link.href}
+          target={config.linkTarget}
+          rel={config.linkRel}
           aria-label={link.label}
           className={className.link}
         >

@@ -7,6 +7,8 @@ export const PROFILE_DOCK_CONFIG = {
     size: 44,
   },
   navLabel: "Liam Grant on the web",
+  linkTarget: "_blank",
+  linkRel: "noopener noreferrer",
   links: [
     {
       id: "github",
