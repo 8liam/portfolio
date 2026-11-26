@@ -1,26 +1,26 @@
-import {
-  GeistSans,
-  GeistMono,
-} from "geist/font";
+import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
+import { GeistSans, GeistMono } from "geist/font";
 
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-export const viewport = {
-  themeColor: "#141312",
+export const viewport: Viewport = {
+  themeColor: "#0d0d0d",
 };
 
-export const metadata = {
-  title: {
-    default: "Liam Grant | Software Engineer",
-  },
+export const metadata: Metadata = {
+  title: "Liam Grant | Software engineer working with AI agents",
   description:
-    "I'm a software engineer based in the Gold Coast, Queensland, building modern web applications and solutions.",
+    "Liam Grant is a Gold Coast software engineer who orchestrates AI agents and builds in TypeScript.",
   referrer: "strict-origin-when-cross-origin",
   keywords: [
     "Liam Grant",
     "Software Engineer",
+    "AI agents",
+    "Agent orchestration",
+    "TypeScript",
     "Gold Coast",
     "Web Developer",
     "React",
@@ -47,17 +47,17 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Liam Grant | Software Engineer",
+    title: "Liam Grant | Software engineer working with AI agents",
     description:
-      "I'm a software engineer based in the Gold Coast, Queensland, building modern web applications and solutions.",
+      "Liam Grant is a Gold Coast software engineer who orchestrates AI agents and builds in TypeScript.",
     images: ["https://liamgrant.com/og-image.png"],
     creator: "@liamgrantdev",
   },
 
   openGraph: {
-    title: "Liam Grant | Software Engineer",
+    title: "Liam Grant | Software engineer working with AI agents",
     description:
-      "I'm a software engineer based in the Gold Coast, Queensland, building modern web applications and solutions.",
+      "Liam Grant is a Gold Coast software engineer who orchestrates AI agents and builds in TypeScript.",
     url: "https://liamgrant.com",
     siteName: "Liam Grant's Portfolio",
     images: [
@@ -73,9 +73,9 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en-AU">
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} antialiased font-sans`}
       >
