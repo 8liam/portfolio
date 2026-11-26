@@ -141,3 +141,9 @@ body {
     padding: 2.5rem 1rem 3rem;
   }
 }
+
+
+/* ── Home: commit grid + dock ──────────────────────────────── */
+:root {
+  --home-ground: #0d0d0d;
+}
