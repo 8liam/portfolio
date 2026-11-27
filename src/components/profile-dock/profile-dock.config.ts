@@ -26,9 +26,9 @@ export const PROFILE_DOCK_CONFIG = {
     },
   ],
   className: {
-    nav: "fixed bottom-5 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3.5 rounded-full border border-white/15 bg-white/[0.07] py-2 pl-2 pr-2.5 text-[#f4f4f4] shadow-[inset_0_1px_0_rgba(255,255,255,0.28),inset_0_-1px_0_rgba(255,255,255,0.06),inset_0_0_14px_rgba(255,255,255,0.05),0_14px_40px_rgba(0,0,0,0.45)] backdrop-blur-[22px] backdrop-saturate-[1.8]",
+    nav: "fixed bottom-5 left-1/2 z-10 flex w-[calc(100vw-2.5rem)] max-w-sm -translate-x-1/2 items-center gap-3.5 sm:w-auto sm:max-w-none rounded-full border border-white/15 bg-white/[0.07] py-2 pl-2 pr-2.5 text-[#f4f4f4] shadow-[inset_0_1px_0_rgba(255,255,255,0.28),inset_0_-1px_0_rgba(255,255,255,0.06),inset_0_0_14px_rgba(255,255,255,0.05),0_14px_40px_rgba(0,0,0,0.45)] backdrop-blur-[22px] backdrop-saturate-[1.8]",
     portrait: "block size-11 rounded-full object-cover",
-    identity: "flex flex-col pr-1 leading-tight",
+    identity: "flex flex-1 flex-col whitespace-nowrap pr-1 leading-tight",
     name: "text-sm font-semibold",
     handle: "text-xs text-white/60",
     divider: "h-[22px] w-px bg-white/20",
