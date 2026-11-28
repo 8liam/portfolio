@@ -1,5 +1,5 @@
 import { COMMIT_GRID_CONFIG as config } from "./commit-grid.config";
-import type { GridLayout, Rgb } from "./commit-grid.types";
+import type { CellNumber, GridLayout, Rgb } from "./commit-grid.types";
 
 const easeOutQuart = (t: number): number => 1 - Math.pow(1 - t, 4);
 
@@ -15,6 +15,7 @@ export type DrawCell = {
   week: number;
   weekday: number;
   level: number;
+  count: number;
   /** distance in cells from the ripple origin */
   distance: number;
 };
@@ -28,6 +29,8 @@ export function drawGrid(
   layout: GridLayout,
   cells: readonly DrawCell[],
   elapsedMs: number,
+  numbers: readonly CellNumber[] = [],
+  fontFamily = "monospace",
 ): void {
   const { width, height, cellWidth, cellHeight, transposed } = layout;
   ctx.fillStyle = config.palette.ground;
@@ -68,5 +71,36 @@ export function drawGrid(
       radius,
     );
     ctx.fill();
+  }
+
+  if (numbers.length === 0) return;
+  const fontPx = Math.round(
+    Math.min(
+      config.hover.maxFontPx,
+      Math.max(config.hover.minFontPx, small * config.hover.fontRatio),
+    ),
+  );
+  ctx.font = `${config.hover.fontWeight} ${fontPx}px ${fontFamily}`;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  for (const number of numbers) {
+    const cell = cells.find(
+      (c) => c.week === number.week && c.weekday === number.weekday,
+    );
+    if (cell === undefined) continue;
+    const col = transposed ? cell.weekday : cell.week;
+    const row = transposed ? cell.week : cell.weekday;
+    const scale =
+      config.hover.scaleFrom + (1 - config.hover.scaleFrom) * number.progress;
+    ctx.save();
+    ctx.globalAlpha = number.progress;
+    ctx.fillStyle =
+      cell.level >= config.hover.lightLevelFrom
+        ? config.hover.textOnLight
+        : config.hover.textOnDark;
+    ctx.translate((col + 0.5) * cellWidth, (row + 0.5) * cellHeight);
+    ctx.scale(scale, scale);
+    ctx.fillText(String(cell.count), 0, 0);
+    ctx.restore();
   }
 }

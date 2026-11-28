@@ -19,6 +19,21 @@ export const COMMIT_GRID_CONFIG = {
     cellDurationMs: 520,
     glow: 0.35,
   },
+  hover: {
+    /** count text colour on light cells (top level) and on every other cell */
+    textOnLight: "#0d0d0d",
+    textOnDark: "#ededed",
+    lightLevelFrom: 4,
+    fontWeight: 500,
+    /** glyphs the canvas font must have loaded before the first hover */
+    fontLoadText: "0123456789",
+    fontRatio: 0.4,
+    minFontPx: 10,
+    maxFontPx: 24,
+    fadeMs: 220,
+    /** number starts this fraction of its full size and grows to 1 */
+    scaleFrom: 0.6,
+  },
   label: (total: number): string =>
     `Liam Grant's GitHub contribution graph for the last three months: ${total.toLocaleString("en-AU")} contributions`,
   className: {
