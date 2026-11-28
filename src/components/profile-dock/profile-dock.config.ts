@@ -5,6 +5,7 @@ export const PROFILE_DOCK_CONFIG = {
     src: "/headshot-halftone.png",
     alt: "Halftone portrait of Liam Grant",
     size: 44,
+    unoptimized: true,
   },
   navLabel: "Liam Grant on the web",
   linkTarget: "_blank",

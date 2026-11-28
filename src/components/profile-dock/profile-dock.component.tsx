@@ -11,6 +11,7 @@ export function ProfileDock() {
         alt={config.portrait.alt}
         width={config.portrait.size}
         height={config.portrait.size}
+        unoptimized={config.portrait.unoptimized}
         className={className.portrait}
       />
       <div className={className.identity}>
