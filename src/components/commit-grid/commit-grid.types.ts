@@ -14,3 +14,23 @@ export type GridLayout = {
   /** weeks run down the screen instead of across it */
   transposed: boolean;
 };
+
+export type HoverTarget = {
+  week: number;
+  weekday: number;
+};
+
+export type HoverFade = {
+  week: number;
+  weekday: number;
+  from: number;
+  to: 0 | 1;
+  startedAt: number;
+};
+
+/** a count to draw, with its eased 0..1 visibility */
+export type CellNumber = {
+  week: number;
+  weekday: number;
+  progress: number;
+};
